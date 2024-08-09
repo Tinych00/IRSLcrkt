@@ -181,13 +181,18 @@ showSlides();
 <!-- Main Content -->
 <div class="container">
   <div class="tab-links">
-    <button class="tab-link active" onclick="openTab(event, 'club-info')">Club Info</button>
+    <button class="tab-link active" onclick="openTab(event, 'Teams')">Teams</button>
     <button class="tab-link" onclick="openTab(event, 'fixtures')">Fixtures</button>
     <button class="tab-link" onclick="openTab(event, 'results')">Results</button>
     <button class="tab-link" onclick="openTab(event, 'membership')">Membership</button>
   </div>
 
-  <div id="club-info" class="tab-content active">
+  <div id="Teams" class="tab-content active">
+   <div class="container">
+   <div class="tab-links">
+    <button class="tab-link active" onclick="openTab(event, 'Junior')">Junior</button>
+    <button class="tab-link" onclick="openTab(event, 'Senior')">Senior</button>
+     <div id="Junior" class="tab-content active">
     <h2>About Us</h2>
     <p>The Ingleburn RSL Cricket Club is a community-based club that welcomes players of all ages and skill levels. We have a strong tradition of sportsmanship and fair play, and we are proud to be part of the local community.</p>
 
@@ -202,6 +207,17 @@ showSlides();
     <p><strong>Phone:</strong> (02) 1234 5678</p>
     <p><strong>Address:</strong> 123 Main Street, Ingleburn, NSW 2565</p>
   </div>
+ <div id="Senior" class="tab-content active">
+   <h2>Club Details</h2>
+    <p><strong>Location:</strong> Ingleburn, NSW</p>
+    <p><strong>Established:</strong> 1972</p>
+    <p><strong>President:</strong> John Doe</p>
+    <p><strong>Secretary:</strong> Jane Smith</p>
+
+    <h2>Contact Information</h2>
+    <p><strong>Email:</strong> <a href="mailto:info@ingleburnrslcricket.com">info@ingleburnrslcricket.com</a></p>
+    <p><strong>Phone:</strong> (02) 1234 5678</p>
+    <p><strong>Address:</strong> 123 Main Street, Ingleburn, NSW 2565</p>
 
   <div id="fixtures" class="tab-content">
     <h2>Upcoming Fixtures</h2>
