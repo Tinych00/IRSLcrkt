@@ -1,0 +1,224 @@
+/* General Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFE01A;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar .logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.navbar .logo h2 {
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar a,
+.nav-link,
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 14px 20px;
+  text-align: center;
+  display: block;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a:hover,
+.nav-link:hover,
+.footer a:hover {
+  color: #ffeb3b;
+  background-color: #3949ab;
+  border-radius: 5px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1a237e;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto; /* Ensures footer stays at the bottom */
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.slides {
+  display: none;
+  width: 100%;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots-container {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Header Styles */
+.header {
+  background-image: url('header-image.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3em;
+}
+
+/* Container Styles */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tab Links Styles */
+.tab-links {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.tab-links a {
+  text-decoration: none;
+  color: #1a237e;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.tab-links a:hover {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+/* Club Info Styles */
+.club-info h2 {
+  color: #1a237e;
+  margin-bottom: 15px;
+}
+
+.club-info p,
+.contact-info p {
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar ul li {
+    margin-left: 10px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+
+  .header h1 {
+    font-size: 2em;
+  }
+}
