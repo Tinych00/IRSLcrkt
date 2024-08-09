@@ -20,7 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #333;
+  background-color: #2557B6;
   padding: 10px 20px;
   color: #fff;
 }
@@ -72,13 +72,13 @@ body {
 .nav-link:hover,
 .footer a:hover {
   color: #ffeb3b;
-  background-color: #3949ab;
+  background-color: #2557B6;
   border-radius: 5px;
 }
 
 /* Footer Styles */
 .footer {
-  background-color: #1a237e;
+  background-color: #2557B6;
   color: #fff;
   text-align: center;
   padding: 20px;
