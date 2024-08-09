@@ -3,146 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Nav Bar</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Ingleburn RSL Cricket Club</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #333;
-            padding: 1rem;
-            position: relative;
-        }
-
-        .nav-logo {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.5rem;
-            position: absolute;
-            left: 1rem;
-        }
-
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-item {
-            margin: 0 1rem;
-            position: relative;
-        }
-
-        .nav-link {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 0.5rem;
-            display: block;
-        }
-
-        .nav-link:hover {
-            background-color: #444;
-            border-radius: 5px;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #444;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            min-width: 10rem;
-            border-radius: 5px;
-        }
-
-        .dropdown-item {
-            margin: 0;
-        }
-
-        .dropdown-item a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            display: block;
-        }
-
-        .dropdown-item a:hover {
-            background-color: #555;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .nav-toggle {
-            display: none;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: #fff;
-            position: absolute;
-            right: 1rem;
-        }
-
-        .nav-menu-visible {
-            display: flex;
-            flex-direction: column;
-        }
-
-        @media (max-width: 768px) {
-            .nav-toggle {
-                display: block;
-            }
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-            }
-            .nav-item {
-                margin: 0.5rem 0;
-            }
-        }
+      
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="#" class="nav-logo">Logo</a>
-        <button class="nav-toggle">&#9776;</button>
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link">Services</a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-item"><a href="#">Service 1</a></li>
-                    <li class="dropdown-item"><a href="#">Service 2</a></li>
-                    <li class="dropdown-item"><a href="#">Service 3</a></li>
 
-                </ul>
-            </li>
-            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-        </ul>
-         
-               
-    </nav>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('nav-menu-visible');
-            });
-        });
-    </script>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Events</a>
+        <a href="#">Teams</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="crkt.png" alt="Ingleburn RSL Cricket Club Logo">
+        <div class="club-name">Ingleburn RSL Cricket Club</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="tab-links">
+            <a href="#">Info</a>
+            <a href="#">Events</a>
+            <a href="#">Teams</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="club-info">
+            <h2>About Us</h2>
+            <p>The Ingleburn RSL Cricket Club is a community-based club that welcomes players of all ages and skill levels. We have a strong tradition of sportsmanship and fair play, and we are proud to be part of the local community.</p>
+
+            <h2>Club Details</h2>
+            <p><strong>Location:</strong> Ingleburn, NSW</p>
+            <p><strong>Established:</strong> 1972</p>
+            <p><strong>President:</strong> John Doe</p>
+            <p><strong>Secretary:</strong> Jane Smith</p>
+
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> info@ingleburnrslcricket.com</p>
+                <p><strong>Phone:</strong> (02) 1234 5678</p>
+                <p><strong>Address:</strong> 123 Main Street, Ingleburn, NSW 2565</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact Us</a>
+        </p>
+    </div>
+
 </body>
 </html>
