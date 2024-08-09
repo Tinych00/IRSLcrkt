@@ -11,9 +11,8 @@ body {
   background-color: #FFE01A;
   line-height: 1.6;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Navigation Bar Styles */
@@ -51,15 +50,15 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar ul li {
   margin-left: 20px;
 }
 
-.navbar a, .nav-link, .footer a {
+.navbar a,
+.nav-link,
+.footer a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -69,7 +68,9 @@ body {
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.navbar a:hover, .nav-link:hover, .footer a:hover {
+.navbar a:hover,
+.nav-link:hover,
+.footer a:hover {
   color: #ffeb3b;
   background-color: #3949ab;
   border-radius: 5px;
@@ -81,7 +82,7 @@ body {
   color: #fff;
   text-align: center;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: auto; /* Ensures footer stays at the bottom */
 }
 
 /* Slideshow Styles */
@@ -96,11 +97,11 @@ body {
   width: 100%;
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
   padding: 16px;
   margin-top: -22px;
   color: white;
@@ -116,7 +117,8 @@ body {
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -137,7 +139,8 @@ body {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -194,7 +197,8 @@ body {
   margin-bottom: 15px;
 }
 
-.club-info p, .contact-info p {
+.club-info p,
+.contact-info p {
   line-height: 1.6;
   margin: 5px 0;
 }
