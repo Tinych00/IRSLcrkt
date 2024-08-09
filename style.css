@@ -8,40 +8,45 @@ body {
   font-family: Arial, sans-serif;
   background-color: #FFE01A;
   line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.navbar, .footer {
+  background-color: #1a237e;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1a237e;
-  color: #fff;
-  padding: 10px 20px;
 }
 
-.navbar .logo {
+.navbar .logo, .navbar ul {
   display: flex;
   align-items: center;
 }
 
 .navbar .logo img {
   width: 50px;
-  height: auto;
   margin-right: 10px;
 }
 
 .navbar ul {
   list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar ul li {
   margin-left: 20px;
 }
 
-.navbar ul li a, .navbar a, .nav-link {
+.navbar a, .nav-link, .footer a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -51,83 +56,70 @@ body {
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.navbar ul li a:hover, .navbar a:hover, .nav-link:hover {
+.navbar a:hover, .nav-link:hover, .footer a:hover {
   color: #ffeb3b;
   background-color: #3949ab;
   border-radius: 5px;
 }
 
-    body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+.slideshow-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
 
-        .slideshow-container {
-            position: relative;
-            max-width: 1000px;
-            margin: auto;
-        }
+.slides {
+  display: none;
+  width: 100%;
+}
 
-        .slides {
-            display: none;
-            width: 100%;
-            height: auto;
-        }
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
 
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
 
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
+.dots-container {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+}
 
-        .dots-container {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-        }
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
 
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: #717171;
-        }
-
+.active, .dot:hover {
+  background-color: #717171;
+}
 
 .header {
-  background-image: url('header-image.jpg'); /* Replace with actual image */
+  background-image: url('header-image.jpg');
   background-size: cover;
   background-position: center;
   height: 200px;
@@ -135,8 +127,7 @@ body {
   align-items: center;
   justify-content: center;
   color: #fff;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-  padding: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   text-align: center;
 }
 
@@ -149,7 +140,7 @@ body {
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .tab-links {
@@ -179,25 +170,6 @@ body {
 .club-info p, .contact-info p {
   line-height: 1.6;
   margin: 5px 0;
-}
-
-.footer {
-  background-color: #1a237e;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 20px;
-}
-
-.footer a {
-  color: #ffeb3b;
-  margin: 0 10px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover {
-  color: #fff;
 }
 
 @media (max-width: 768px) {
