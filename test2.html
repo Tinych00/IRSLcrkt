@@ -68,9 +68,13 @@
       max-width: 1000px;
       margin: 20px auto;
       position: relative;
+      overflow: hidden;
     }
     .slides img {
       width: 100%;
+      height: auto;
+      max-height: 500px; /* Adjust this value to control the height */
+      object-fit: cover; /* Ensures the images cover the area uniformly */
       display: none;
     }
     .container {
