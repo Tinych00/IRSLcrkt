@@ -189,9 +189,9 @@ showSlides();
 
   <!-- Teams Tab Content -->
   <div id="Teams" class="tab-content active">
-    <div class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'Juniors')">Juniors</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'Seniors')">Seniors</button>
+    <div id="JuniorSeniorTabs" class="tab-links">
+      <button class="tab-link active" onclick="openNestedTab(event, 'Juniors', 'Teams')">Juniors</button>
+      <button class="tab-link" onclick="openNestedTab(event, 'Seniors', 'Teams')">Seniors</button>
     </div>
 
     <div id="Juniors" class="tab-content active">
@@ -223,9 +223,9 @@ showSlides();
 
   <!-- Fixtures Tab Content -->
   <div id="fixtures" class="tab-content">
-    <div class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsFixtures')">Juniors</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsFixtures')">Seniors</button>
+    <div id="JuniorSeniorTabs" class="tab-links">
+      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsFixtures', 'fixtures')">Juniors</button>
+      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsFixtures', 'fixtures')">Seniors</button>
     </div>
 
     <div id="JuniorsFixtures" class="tab-content active">
@@ -241,9 +241,9 @@ showSlides();
 
   <!-- Results Tab Content -->
   <div id="results" class="tab-content">
-    <div class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsResults')">Juniors</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsResults')">Seniors</button>
+    <div id="JuniorSeniorTabs" class="tab-links">
+      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsResults', 'results')">Juniors</button>
+      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsResults', 'results')">Seniors</button>
     </div>
 
     <div id="JuniorsResults" class="tab-content active">
@@ -259,9 +259,9 @@ showSlides();
 
   <!-- Registration Tab Content -->
   <div id="registration" class="tab-content">
-    <div class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsRegistration')">Juniors</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsRegistration')">Seniors</button>
+    <div id="JuniorSeniorTabs" class="tab-links">
+      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsRegistration', 'registration')">Juniors</button>
+      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsRegistration', 'registration')">Seniors</button>
     </div>
 
     <div id="JuniorsRegistration" class="tab-content active">
@@ -281,31 +281,46 @@ showSlides();
 <!-- Tab Navigation Script -->
 <script>
 function openTab(evt, tabName) {
+  // Hide all tabs
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tab-content");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].classList.remove("active");
   }
-  tablinks = document.getElementsByClassName("tab-link");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active");
-  }
+  // Show the selected tab
   document.getElementById(tabName).classList.add("active");
+
+  // Always default to Juniors section
+  let nestedTabs = document.getElementById(tabName).querySelectorAll(".tab-content");
+  for (i = 0; i < nestedTabs.length; i++) {
+    nestedTabs[i].classList.remove("active");
+  }
+  document.getElementById("Juniors" + tabName.replace('Teams', '').replace('Fixtures', 'Fixtures').replace('Results', 'Results').replace('Registration', 'Registration')).classList.add("active");
+
+  // Hide the nested tabs not related to the current tab
+  document.getElementById(tabName).querySelector("#JuniorSeniorTabs").style.display = "block";
   evt.currentTarget.classList.add("active");
 }
 
-function openNestedTab(evt, tabName) {
+function openNestedTab(evt, tabName, parentTabName) {
   let i, tabcontent, tablinks;
-  tabcontent = evt.currentTarget.parentNode.nextElementSibling.getElementsByClassName("tab-content");
+  tabcontent = document.getElementById(parentTabName).getElementsByClassName("tab-content");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].classList.remove("active");
   }
-  tablinks = evt.currentTarget.parentNode.getElementsByClassName("tab-link");
+  tablinks = document.getElementById(parentTabName).getElementsByClassName("tab-link");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].classList.remove("active");
   }
   document.getElementById(tabName).classList.add("active");
   evt.currentTarget.classList.add("active");
+
+  // Show/hide nested tabs depending on active tab
+  if (tabName.includes("Juniors")) {
+    document.querySelector("#JuniorSeniorTabs .tab-link:nth-child(2)").style.display = "none";
+  } else {
+    document.querySelector("#JuniorSeniorTabs .tab-link:nth-child(1)").style.display = "none";
+  }
 }
 </script>
 
