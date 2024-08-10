@@ -5,144 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ingleburn RSL Cricket Club</title>
   <style>
-  /* Global Styles */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #00ffea;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  .navbar {
-    background-color: #2557B6;
-    padding: 10px 20px;
-    color: #fff; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .navbar .logo a {
-    text-decoration: none;
-    color: #ffff00;
-    display: flex;
-    align-items: center;
-  }
-  .navbar .logo img {
-    width: 100px; 
-    margin-right: 15px; 
-  }
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-  }
-  .navbar ul li {
-    margin-left: 20px;
-  }
-  .navbar a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 14px 20px;
-    transition: background-color 0.3s ease;
-  }
-  .navbar a:hover {
-    background-color: #204998;
-    border-radius: 5px;
-  }
-  .header {
-    background-image: url('header-image.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-  .header h1 {
-    font-size: 3em;
-  }
-  .slideshow-container {
-    max-width: 1000px;
-    margin: 20px auto;
-    position: relative;
-    overflow: hidden;
-  }
-  .slides img {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-    display: none;
-  }
-  .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-  }
-  .tab-links {
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 2px solid #e0e0e0;
-    margin-bottom: 20px;
-  }
-  .tab-links button {
-    background: none;
-    border: none;
-    color: #000;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  .tab-links button.active {
-    background-color: #2557B6;
-    color: #fff;
-    border-radius: 5px;
-  }
-  .tab-content {
-    display: none;
-  }
-  .tab-content.active {
-    display: block;
-  }
-  .footer {
-    background-color: #2557B6; 
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
-  }
-  /* Contact Information Styles */
-  .contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-  }
-  .contact-card {
-    width: 30%;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .contact-card h3 {
-    margin-bottom: 5px;
-    font-size: 1.2em;
-    color: #333;
-  }
-  .contact-card p {
-    margin: 5px 0;
-    color: #666;
-  }
-  .contact-card a {
-    color: #2557B6;
-    text-decoration: none;
-  }
-</style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFE01A;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .navbar {
+      background-color: #2557B6;
+      padding: 10px 20px;
+      color: #fff; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .logo a {
+      text-decoration: none;
+      color: #ffff00;
+      display: flex;
+      align-items: center;
+    }
+    .navbar .logo img {
+      width: 100px; 
+      margin-right: 15px; 
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+    }
+    .navbar ul li {
+      margin-left: 20px;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 20px;
+      transition: background-color 0.3s ease;
+    }
+    .navbar a:hover {
+      background-color: #204998;
+      border-radius: 5px;
+    }
+    .header {
+      background-image: url('header-image.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    .header h1 {
+      font-size: 3em;
+    }
+    .slideshow-container {
+      max-width: 1000px;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      display: none;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+    }
+    .tab-links {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+    .tab-links button {
+      background: none;
+      border: none;
+      color: #000;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .tab-links button.active {
+      background-color: #2557B6;
+      color: #fff;
+      border-radius: 5px;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .footer {
+      background-color: #2557B6; 
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+    }
+    /* Contact Information Styles */
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .contact-card {
+      width: 30%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .contact-card h3 {
+      margin-bottom: 5px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    .contact-card p {
+      margin: 5px 0;
+      color: #666;
+    }
+    .contact-card a {
+      color: #2557B6;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -208,6 +209,7 @@ showSlides();
   <div class="tab-links">
     <button class="tab-link active" onclick="openTab(event, 'Teams')">Teams</button>
     <button class="tab-link" onclick="openTab(event, 'fixtures')">Fixtures</button>
+    <button class="tab-link" onclick="openTab(event, 'results')">Results</button>
     <button class="tab-link" onclick="openTab(event, 'registration')">Registration</button>
   </div>
 
@@ -241,31 +243,37 @@ showSlides();
           <p>✉️ <a href="mailto:bwatts1@live.com.au">bwatts1@live.com.au</a></p>
         </div>
         <div class="contact-card">
-          <h3>Daniel Watson</h3>
+          <h3>Mark Jensen</h3>
           <p><strong>Treasurer</strong></p>
-          <p>📞 0424 078 323</p>
-          <p>✉️ <a href="mailto:dwatson@hotmail.com">dwatson@hotmail.com</a></p>
+          <p>📞 0405 021 345</p>
+          <p>✉️ <a href="mailto:markjensen@gmail.com">markjensen@gmail.com</a></p>
         </div>
       </div>
     </div>
 
     <div id="Seniors" class="tab-content">
       <h2>Senior Team Information</h2>
-      <p>The Ingleburn RSL Cricket Club Senior teams compete in various local leagues. We are always on the lookout for new players to join our competitive and friendly teams.</p>
+      <p>The senior teams at Ingleburn RSL Cricket Club are competitive and dedicated, with a strong focus on teamwork and development.</p>
 
       <!-- Contact Information for Seniors -->
       <div class="contact-info">
         <div class="contact-card">
-          <h3>Mark Taylor</h3>
+          <h3>David Smith</h3>
           <p><strong>Senior Team Manager</strong></p>
-          <p>📞 0412 345 678</p>
-          <p>✉️ <a href="mailto:marktaylor@cricket.com">marktaylor@cricket.com</a></p>
+          <p>📞 0456 789 101</p>
+          <p>✉️ <a href="mailto:davidsmith@gmail.com">davidsmith@gmail.com</a></p>
         </div>
         <div class="contact-card">
-          <h3>John Smith</h3>
+          <h3>John Doe</h3>
           <p><strong>Senior Coach</strong></p>
-          <p>📞 0412 987 654</p>
-          <p>✉️ <a href="mailto:johnsmith@cricket.com">johnsmith@cricket.com</a></p>
+          <p>📞 0402 123 456</p>
+          <p>✉️ <a href="mailto:john.doe@gmail.com">john.doe@gmail.com</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Jane Doe</h3>
+          <p><strong>Assistant Coach</strong></p>
+          <p>📞 0412 345 678</p>
+          <p>✉️ <a href="mailto:jane.doe@gmail.com">jane.doe@gmail.com</a></p>
         </div>
       </div>
     </div>
@@ -274,57 +282,53 @@ showSlides();
   <!-- Fixtures Tab Content -->
   <div id="fixtures" class="tab-content">
     <h2>Fixtures</h2>
-    <p>Upcoming match schedule and results will be available soon.</p>
+    <p>Details about upcoming matches and fixtures will be provided here.</p>
+  </div>
+
+  <!-- Results Tab Content -->
+  <div id="results" class="tab-content">
+    <h2>Results</h2>
+    <p>Match results and team standings will be updated here.</p>
   </div>
 
   <!-- Registration Tab Content -->
   <div id="registration" class="tab-content">
     <h2>Registration</h2>
-    <p>To register for the upcoming season, please fill out the registration form.</p>
+    <p>Information on how to register for the upcoming season.</p>
   </div>
 </div>
 
-<!-- Tab Script -->
-<script>
-function openTab(event, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tab-link");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  event.currentTarget.className += " active";
-}
-
-function openNestedTab(event, tabName, parentTabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementById(parentTabName).getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementById(parentTabName).getElementsByClassName("tab-link");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  event.currentTarget.className += " active";
-}
-
-// Set default active tab on page load
-document.addEventListener("DOMContentLoaded", function() {
-  openTab(event, 'Teams');  // Default main tab
-  openNestedTab(event, 'Juniors', 'Teams');  // Default nested tab
-});
-</script>
-
-<!-- Footer Section -->
+<!-- Footer -->
 <footer class="footer">
-  <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
+  <p>&copy; 2023 Ingleburn RSL Cricket Club. All rights reserved.</p>
 </footer>
+
+<!-- Tab Functionality Script -->
+<script>
+  function openTab(evt, tabName) {
+    let i, tabcontent, tablinks;
+    tabcontent = document.querySelectorAll(".tab-content");
+    tablinks = document.querySelectorAll(".tab-link");
+    
+    tabcontent.forEach(content => content.classList.remove("active"));
+    tablinks.forEach(link => link.classList.remove("active"));
+    
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
+
+  function openNestedTab(evt, tabName, parentTab) {
+    let i, tabcontent, tablinks;
+    tabcontent = document.querySelectorAll(`#${parentTab} .tab-content`);
+    tablinks = document.querySelectorAll(`#${parentTab} .tab-link`);
+    
+    tabcontent.forEach(content => content.classList.remove("active"));
+    tablinks.forEach(link => link.classList.remove("active"));
+    
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
+</script>
 
 </body>
 </html>
