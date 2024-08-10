@@ -1,304 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingleburn RSL Cricket Club</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e01aff;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .navbar {
-            background-color: #2557B6;
-            padding: 10px 20px;
-            color: #fff; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navbar .logo a {
-            text-decoration: none;
-            color: #ffff00;
-            display: flex;
-            align-items: center;
-        }
-        .navbar .logo img {
-            width: 100px;
-            margin-right: 15px; 
-        }
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-        }
-        .navbar ul li {
-            margin-left: 20px;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 14px 20px;
-            transition: background-color 0.3s ease;
-        }
-        .navbar a:hover {
-            background-color: #204998;
-            border-radius: 5px;
-        }
-        .header {
-            background-image: url('header-image.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        .header h1 {
-            font-size: 3em;
-        }
-        .slideshow-container {
-            max-width: 1000px;
-            margin: 20px auto;
-            position: relative;
-            overflow: hidden;
-        }
-        .slides img {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: cover;
-            display: none;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-        }
-        .tab-links {
-            display: flex;
-            justify-content: space-around;
-            border-bottom: 2px solid #e0e0e0;
-            margin-bottom: 20px;
-        }
-        .tab-links button {
-            background: none;
-            border: none;
-            color: #000;
-            padding: 10px 20px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 1em;
-        }
-        .tab-links button.active {
-            background-color: #e0e0e0;
-            border-radius: 5px;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
-        .contact-card {
-            flex: 1 1 30%;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            margin: 10px;
-            text-align: center;
-        }
-        .contact-card h3 {
-            margin-top: 0;
-        }
-        .contact-card p {
-            margin: 5px 0;
-        }
-        .contact-card a {
-            color: #2557B6;
-            text-decoration: none;
-        }
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
-        .footer {
-            background-color: #2557B6; 
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: auto;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ingleburn RSL Cricket Club</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #00ffea;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .navbar {
+      background-color: #2557B6;
+      padding: 10px 20px;
+      color: #fff; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .logo a {
+      text-decoration: none;
+      color: #ffff00;
+      display: flex;
+      align-items: center;
+    }
+    .navbar .logo img {
+      width: 100px; 
+      margin-right: 15px; 
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+    }
+    .navbar ul li {
+      margin-left: 20px;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 20px;
+      transition: background-color 0.3s ease;
+    }
+    .navbar a:hover {
+      background-color: #204998;
+      border-radius: 5px;
+    }
+    .header {
+      background-image: url('header-image.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    .header h1 {
+      font-size: 3em;
+    }
+    .slideshow-container {
+      max-width: 1000px;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      display: none;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+    }
+    .tab-links {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+    .tab-links button {
+      background: none;
+      border: none;
+      color: #000;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .tab-links button.active {
+      background-color: #e0e0e0;
+      border-radius: 5px;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .footer {
+      background-color: #2557B6; 
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+    }
+    /* Contact Information Styles */
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .contact-card {
+      width: 30%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .contact-card h3 {
+      margin-bottom: 5px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    .contact-card p {
+      margin: 5px 0;
+      color: #666;
+    }
+    .contact-card a {
+      color: #2557B6;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
 <!-- Navigation Bar -->
 <nav class="navbar">
-    <div class="logo">
-        <a href="index.html">
-            <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
-            <h2>Ingleburn RSL Cricket Club</h2>
-        </a>
-    </div>
-    <ul>
-        <li><a href="Registration.html">Registration</a></li>
-        <li><a href="Teams.html">Teams</a></li>
-        <li><a href="Events.html">Events</a></li>
-        <li><a href="Gallery.html">Gallery</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-        <li><a href="About_Us.html">About Us</a></li>
-        <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
-    </ul>
+  <div class="logo">
+    <a href="index.html">
+      <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
+      <h2>Ingleburn RSL Cricket Club</h2>
+    </a>
+  </div>
+  <ul>
+    <li><a href="Registration.html">Registration</a></li>
+    <li><a href="Teams.html">Teams</a></li>
+    <li><a href="Events.html">Events</a></li>
+    <li><a href="Gallery.html">Gallery</a></li>
+    <li><a href="Contact.html">Contact</a></li> 
+    <li><a href="About_Us.html">About Us</a></li>
+    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
+  </ul>
 </nav>
 
 <!-- Header Section -->
 <header class="header">
-    <h1>Welcome to Ingleburn RSL Cricket Club</h1>
+  <h1>Welcome to Ingleburn RSL Cricket Club</h1>
 </header>
 
 <!-- Slideshow -->
 <div class="slideshow-container">
-    <div class="slides">
-        <img src="assets/1.jpg" style="width:100%">
-        <img src="assets/9.jpg" style="width:100%">
-        <img src="assets/14.jpg" style="width:100%">
-        <img src="assets/7.jpg" style="width:100%">
-        <img src="assets/10.jpg" style="width:100%">
-        <img src="assets/17.jpg" style="width:100%">
-        <img src="assets/15.jpg" style="width:100%">
-        <img src="assets/12.jpg" style="width:100%">
-        <img src="assets/6.jpg" style="width:100%">
-        <img src="assets/4.jpg" style="width:100%">
-        <img src="assets/18.jpg" style="width:100%">
-        <img src="assets/8.jpg" style="width:100%">
-        <img src="assets/5.jpg" style="width:100%">
-    </div>
+  <div class="slides">
+    <!-- <img src="assets/3.jpg" style="width:100%"> -->
+    <img src="assets/1.jpg" style="width:100%">
+    <img src="assets/9.jpg" style="width:100%">
+    <img src="assets/14.jpg" style="width:100%">
+    <img src="assets/7.jpg" style="width:100%">
+    <img src="assets/10.jpg" style="width:100%">       
+    <img src="assets/17.jpg" style="width:100%">
+    <img src="assets/15.jpg" style="width:100%">
+    <img src="assets/12.jpg" style="width:100%">
+    <img src="assets/6.jpg" style="width:100%">
+    <img src="assets/4.jpg" style="width:100%">
+    <img src="assets/18.jpg" style="width:100%">
+    <img src="assets/8.jpg" style="width:100%">
+    <img src="assets/5.jpg" style="width:100%">
+  </div>
 </div>
 
 <!-- Slideshow Script -->
 <script>
 let slideIndex = 0;
 function showSlides() {
-    let slides = document.querySelectorAll(".slides img");
-    slides.forEach((slide) => slide.style.display = "none");
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000);
+  let slides = document.querySelectorAll(".slides img");
+  slides.forEach((slide) => slide.style.display = "none");
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 4000); // Change image every 4 seconds
 }
 showSlides();
 </script>
 
 <!-- Main Content -->
 <div class="container">
-    <div class="tab-links">
-        <button class="tab-link active" onclick="openTab(event, 'Teams')">Teams</button>
-        <button class="tab-link" onclick="openTab(event, 'fixtures')">Fixtures</button>
-        <button class="tab-link" onclick="openTab(event, 'results')">Results</button>
-        <button class="tab-link" onclick="openTab(event, 'registration')">Registration</button>
+  <div class="tab-links">
+    <button class="tab-link active" onclick="openTab(event, 'Teams')">Teams</button>
+    <button class="tab-link" onclick="openTab(event, 'fixtures')">Fixtures</button>
+    <button class="tab-link" onclick="openTab(event, 'results')">Results</button>
+    <button class="tab-link" onclick="openTab(event, 'registration')">Registration</button>
+  </div>
+
+  <!-- Teams Tab Content -->
+  <div id="Teams" class="tab-content active">
+    <div id="JuniorSeniorTabs" class="tab-links">
+      <button class="tab-link active" onclick="openNestedTab(event, 'Juniors', 'Teams')">Juniors</button>
+      <button class="tab-link" onclick="openNestedTab(event, 'Seniors', 'Teams')">Seniors</button>
     </div>
 
-    <!-- Teams Tab Content -->
-    <div id="Teams" class="tab-content active">
-        <div id="JuniorSeniorTabs" class="tab-links">
-            <button class="tab-link active" onclick="openNestedTab(event, 'Juniors', 'Teams')">Juniors</button>
-            <button class="tab-link" onclick="openNestedTab(event, 'Seniors', 'Teams')">Seniors</button>
+    <div id="Juniors" class="tab-content active">
+      <h2>Junior Team Information</h2>
+      <p>The Ingleburn RSL Cricket Club is a community-based club that welcomes players of all ages and skill levels. We have a strong tradition of sportsmanship and fair play, and we are proud to be part of the local community.</p>
+      
+      <h2>Club Details</h2>
+      <p><strong>Location:</strong> Ingleburn, NSW</p>
+      <p><strong>Established:</strong> 1972</p>
+
+      <!-- Contact Information for Juniors -->
+      <div class="contact-info">
+        <div class="contact-card">
+          <h3>Gerrard Riley</h3>
+          <p><strong>President</strong></p>
+          <p>📞 0416 263 333</p>
+          <p>✉️ <a href="mailto:gerrardriley@hotmail.com">gerrardriley@hotmail.com</a></p>
         </div>
-
-        <div id="Juniors" class="tab-content active">
-            <h2>Junior Team Information</h2>
-            <p>The Ingleburn RSL Cricket Club is a community-based club that welcomes players of all ages and skill levels. We have a strong tradition of sportsmanship and fair play, and we are proud to be part of the local community.</p>
-            <h2>Club Details</h2>
-            <p><strong>Location:</strong> Ingleburn, NSW</p>
-            <p><strong>Established:</strong> 1972</p>
-            <p><strong>President:</strong> John Doe</p>
-            <p><strong>Secretary:</strong> Jane Smith</p>
-            <h2>Contact Information</h2>
-            <p><strong>Email:</strong> <a href="mailto:info@ingleburnrslcricket.com">info@ingleburnrslcricket.com</a></p>
-            <p><strong>Phone:</strong> (02) 1234 5678</p>
-            <p><strong>Address:</strong> 123 Main Street, Ingleburn, NSW 2565</p>
+        <div class="contact-card">
+          <h3>Brett Watts</h3>
+          <p><strong>Secretary</strong></p>
+          <p>📞 0431 224 344</p>
+          <p>✉️ <a href="mailto:brettwatts291@gmail.com">brettwatts291@gmail.com</a></p>
         </div>
-
-        <div id="Seniors" class="tab-content">
-            <h2>Senior Team Information</h2>
-            <p><strong>Location:</strong> Ingleburn, NSW</p>
-            <p><strong>Established:</strong> 1972</p>
-            <p><strong>President:</strong> John Doe</p>
-            <p><strong>Secretary:</strong> Jane Smith</p>
-            <h2>Contact Information</h2>
-            <p><strong>Email:</strong> <a href="mailto:info@ingleburnrslcricket.com">info@ingleburnrslcricket.com</a></p>
-            <p><strong>Phone:</strong> (02) 1234 5678</p>
-            <p><strong>Address:</strong> 123 Main Street, Ingleburn, NSW 2565</p>
+        <div class="contact-card">
+          <h3>Brad Collins</h3>
+          <p><strong>Treasurer</strong></p>
+          <p>📞 0401 909 166</p>
+          <p>✉️ <a href="mailto:brad_collins@optusnet.com.au">brad_collins@optusnet.com.au</a></p>
         </div>
+      </div>
     </div>
 
-    <!-- Fixtures Tab Content -->
-    <div id="fixtures" class="tab-content">
-        <h2>Fixtures</h2>
-        <p>Here you can find the upcoming matches for both junior and senior teams.</p>
-        <!-- Add fixtures content here -->
-    </div>
+    <div id="Seniors" class="tab-content">
+      <h2>Senior Team Information</h2>
+      <p>The Ingleburn RSL Cricket Club also offers competitive opportunities for senior players. Our senior teams participate in local leagues, and we emphasize teamwork, skill development, and enjoyment of the game.</p>
 
-    <!-- Results Tab Content -->
-    <div id="results" class="tab-content">
-        <h2>Results</h2>
-        <p>View the latest match results for our teams.</p>
-        <!-- Add results content here -->
+      <!-- Contact Information for Seniors -->
+      <div class="contact-info">
+        <div class="contact-card">
+          <h3>Jason Bingham</h3>
+          <p><strong>Senior Vice President</strong></p>
+          <p>📞 0410 692 323</p>
+          <p>✉️ <a href="mailto:jasobingham10@gmail.com">jasobingham10@gmail.com</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Dan Turner</h3>
+          <p><strong>Senior Team Manager</strong></p>
+          <p>📞 0419 733 888</p>
+          <p>✉️ <a href="mailto:danturner99@gmail.com">danturner99@gmail.com</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Mark Leslie</h3>
+          <p><strong>Head Coach</strong></p>
+          <p>📞 0421 336 997</p>
+          <p>✉️ <a href="mailto:marklesliecct@gmail.com">marklesliecct@gmail.com</a></p>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Registration Tab Content -->
-    <div id="registration" class="tab-content">
-        <h2>Registration</h2>
-        <p>Join our club! Click <a href="Registration.html">here</a> to register.</p>
-        <!-- Add registration details here -->
-    </div>
+  <!-- Additional tabs -->
+  <div id="fixtures" class="tab-content">
+    <h2>Fixtures</h2>
+    <p>Content for Fixtures will be added here.</p>
+  </div>
+
+  <div id="results" class="tab-content">
+    <h2>Results</h2>
+    <p>Content for Results will be added here.</p>
+  </div>
+
+  <div id="registration" class="tab-content">
+    <h2>Registration</h2>
+    <p>Content for Registration will be added here.</p>
+  </div>
+
 </div>
-
-<!-- JavaScript for Tab Functionality -->
-<script>
-function openTab(evt, tabName) {
-    const tabContents = document.querySelectorAll('.tab-content');
-    const tabLinks = document.querySelectorAll('.tab-links button');
-
-    tabContents.forEach((content) => content.classList.remove('active'));
-    tabLinks.forEach((link) => link.classList.remove('active'));
-
-    document.getElementById(tabName).classList.add('active');
-    evt.currentTarget.classList.add('active');
-}
-
-function openNestedTab(evt, tabName, parentTab) {
-    const tabContents = document.querySelectorAll(`#${parentTab} .tab-content`);
-    const tabLinks = document.querySelectorAll(`#${parentTab} .tab-links button`);
-
-    tabContents.forEach((content) => content.classList.remove('active'));
-    tabLinks.forEach((link) => link.classList.remove('active'));
-
-    document.getElementById(tabName).classList.add('active');
-    evt.currentTarget.classList.add('active');
-}
-</script>
 
 <!-- Footer Section -->
 <footer class="footer">
-    <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
+  <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
 </footer>
+
+<!-- Tab Navigation Script -->
+<script>
+function openTab(evt, tabName) {
+  let i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tab-link");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+function openNestedTab(evt, tabName, parentTab) {
+  let i, tabcontent, tablinks, parentTabContent;
+  parentTabContent = document.getElementById(parentTab);
+  tabcontent = parentTabContent.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = parentTabContent.getElementsByClassName("tab-link");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 
 </body>
 </html>
