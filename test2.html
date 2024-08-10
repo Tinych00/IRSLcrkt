@@ -240,66 +240,90 @@ showSlides();
           <p>✉️ <a href="mailto:bwatts1@live.com.au">bwatts1@live.com.au</a></p>
         </div>
         <div class="contact-card">
-          <h3>David Peters</h3>
+          <h3>Daniel Watson</h3>
           <p><strong>Treasurer</strong></p>
-          <p>📞 0434 111 555</p>
-          <p>✉️ <a href="mailto:davidpeters@gmail.com">davidpeters@gmail.com</a></p>
+          <p>📞 0424 078 323</p>
+          <p>✉️ <a href="mailto:dwatson@hotmail.com">dwatson@hotmail.com</a></p>
         </div>
       </div>
     </div>
 
     <div id="Seniors" class="tab-content">
       <h2>Senior Team Information</h2>
-      <p>Details about the Senior teams will be added here.</p>
+      <p>The Ingleburn RSL Cricket Club Senior teams compete in various local leagues. We are always on the lookout for new players to join our competitive and friendly teams.</p>
+
+      <!-- Contact Information for Seniors -->
+      <div class="contact-info">
+        <div class="contact-card">
+          <h3>Mark Taylor</h3>
+          <p><strong>Senior Team Manager</strong></p>
+          <p>📞 0412 345 678</p>
+          <p>✉️ <a href="mailto:marktaylor@cricket.com">marktaylor@cricket.com</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>John Smith</h3>
+          <p><strong>Senior Coach</strong></p>
+          <p>📞 0412 987 654</p>
+          <p>✉️ <a href="mailto:johnsmith@cricket.com">johnsmith@cricket.com</a></p>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Fixtures Tab Content -->
   <div id="fixtures" class="tab-content">
-    <h2>Fixture List</h2>
-    <p>The fixtures for the current season will be updated here.</p>
+    <h2>Fixtures</h2>
+    <p>Upcoming match schedule and results will be available soon.</p>
   </div>
 
   <!-- Registration Tab Content -->
   <div id="registration" class="tab-content">
-    <h2>Registration Details</h2>
-    <p>Information about the registration process will be available soon.</p>
+    <h2>Registration</h2>
+    <p>To register for the upcoming season, please fill out the registration form.</p>
   </div>
 </div>
 
-<!-- Footer -->
+<!-- Tab Script -->
+<script>
+function openTab(event, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tab-link");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  event.currentTarget.className += " active";
+}
+
+function openNestedTab(event, tabName, parentTabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementById(parentTabName).getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementById(parentTabName).getElementsByClassName("tab-link");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  event.currentTarget.className += " active";
+}
+
+// Set default active tab on page load
+document.addEventListener("DOMContentLoaded", function() {
+  openTab(event, 'Teams');  // Default main tab
+  openNestedTab(event, 'Juniors', 'Teams');  // Default nested tab
+});
+</script>
+
+<!-- Footer Section -->
 <footer class="footer">
-  <p>&copy; 2024 Ingleburn RSL Cricket Club. All Rights Reserved.</p>
+  <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
 </footer>
 
-<script>
-  function openTab(evt, tabName) {
-    let i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tab-content");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].classList.remove("active");
-    }
-    tablinks = document.getElementsByClassName("tab-link");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].classList.remove("active");
-    }
-    document.getElementById(tabName).classList.add("active");
-    evt.currentTarget.classList.add("active");
-  }
-
-  function openNestedTab(evt, tabName, parentTab) {
-    let i, tabcontent, tablinks;
-    tabcontent = document.getElementById(parentTab).getElementsByClassName("tab-content");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].classList.remove("active");
-    }
-    tablinks = document.getElementById(parentTab).getElementsByClassName("tab-link");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].classList.remove("active");
-    }
-    document.getElementById(tabName).classList.add("active");
-    evt.currentTarget.classList.add("active");
-  }
-</script>
 </body>
 </html>
