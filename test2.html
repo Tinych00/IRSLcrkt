@@ -17,14 +17,14 @@
     .navbar {
       background-color: #2557B6;
       padding: 10px 20px;
-      color: #fff;
+      color: #fff; 
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .navbar .logo a {
       text-decoration: none;
-      color: white;
+      color: #ffff00;
       display: flex;
       align-items: center;
     }
@@ -70,6 +70,7 @@
       margin: 20px auto;
       position: relative;
       overflow: hidden;
+      width: 100%;
     }
     .slides img {
       width: 100%;
@@ -135,7 +136,7 @@
     <li><a href="Gallery.html">Gallery</a></li>
     <li><a href="Contact.html">Contact</a></li> 
     <li><a href="About_Us.html">About Us</a></li>
-    <li><a href="Socials.html">Socials</a></li>
+    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
   </ul>
 </nav>
 
@@ -147,7 +148,6 @@
 <!-- Slideshow -->
 <div class="slideshow-container">
   <div class="slides">
-    <img src="assets/3.jpg" style="width:100%">
     <img src="assets/1.jpg" style="width:100%">
     <img src="assets/9.jpg" style="width:100%">
     <img src="assets/14.jpg" style="width:100%">
@@ -189,9 +189,9 @@ showSlides();
 
   <!-- Teams Tab Content -->
   <div id="Teams" class="tab-content active">
-    <div class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'Juniors')">Juniors</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'Seniors')">Seniors</button>
+    <div id="JuniorSeniorTabs" class="tab-links">
+      <button class="tab-link active" onclick="openNestedTab(event, 'Juniors', 'Teams')">Juniors</button>
+      <button class="tab-link" onclick="openNestedTab(event, 'Seniors', 'Teams')">Seniors</button>
     </div>
 
     <div id="Juniors" class="tab-content active">
@@ -223,96 +223,60 @@ showSlides();
 
   <!-- Fixtures Tab Content -->
   <div id="fixtures" class="tab-content">
-    <div class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsFixtures')">Juniors</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsFixtures')">Seniors</button>
-    </div>
-
-    <div id="JuniorsFixtures" class="tab-content active">
-      <h2>Junior Team Fixtures</h2>
-      <p>Stay tuned for upcoming junior team fixtures!</p>
-    </div>
-
-    <div id="SeniorsFixtures" class="tab-content">
-      <h2>Senior Team Fixtures</h2>
-      <p>Stay tuned for upcoming senior team fixtures!</p>
-    </div>
+    <h2>Fixture Information</h2>
+    <p>Stay tuned for upcoming match fixtures for the Ingleburn RSL Cricket Club teams.</p>
   </div>
 
   <!-- Results Tab Content -->
   <div id="results" class="tab-content">
-    <div class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsResults')">Juniors</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsResults')">Seniors</button>
-    </div>
-
-    <div id="JuniorsResults" class="tab-content active">
-      <h2>Junior Team Results</h2>
-      <p>Check back soon for the latest junior team results!</p>
-    </div>
-
-    <div id="SeniorsResults" class="tab-content">
-      <h2>Senior Team Results</h2>
-      <p>Check back soon for the latest senior team results!</p>
-    </div>
+    <h2>Match Results</h2>
+    <p>Check out the latest match results for the Ingleburn RSL Cricket Club teams.</p>
   </div>
 
   <!-- Registration Tab Content -->
   <div id="registration" class="tab-content">
-    <div class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsRegistration')">Juniors</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsRegistration')">Seniors</button>
-    </div>
-
-    <div id="JuniorsRegistration" class="tab-content active">
-      <h2>Junior Team Registration</h2>
-      <p>Ready to join the Ingleburn RSL Cricket Club as a junior player? Click the link below to get started!</p>
-      <p><a href="https://www.playhq.com/cricket-australia/register/5e845e">Junior Registration</a></p>
-    </div>
-
-    <div id="SeniorsRegistration" class="tab-content">
-      <h2>Senior Team Registration</h2>
-      <p>Ready to join the Ingleburn RSL Cricket Club as a senior player? Click the link below to get started!</p>
-      <p><a href="https://www.playhq.com/cricket-australia/register/0dbdc6">Senior Registration</a></p>
-    </div>
+    <h2>Registration Information</h2>
+    <p>Register to join the Ingleburn RSL Cricket Club for the upcoming season. We welcome players of all ages and skill levels.</p>
   </div>
 </div>
 
-<!-- Tab Navigation Script -->
+<!-- Footer Section -->
+<footer class="footer">
+  <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
+</footer>
+
+<!-- Tab Script -->
 <script>
 function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tab-content");
   for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
     tabcontent[i].classList.remove("active");
   }
   tablinks = document.getElementsByClassName("tab-link");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].classList.remove("active");
   }
-  document.getElementById(tabName).classList.add("active");
+  document.getElementById(tabName).style.display = "block";
   evt.currentTarget.classList.add("active");
 }
 
-function openNestedTab(evt, tabName) {
+function openNestedTab(evt, tabName, parentTab) {
   let i, tabcontent, tablinks;
-  tabcontent = evt.currentTarget.parentNode.nextElementSibling.getElementsByClassName("tab-content");
+  tabcontent = document.querySelectorAll(`#${parentTab} .tab-content`);
   for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
     tabcontent[i].classList.remove("active");
   }
-  tablinks = evt.currentTarget.parentNode.getElementsByClassName("tab-link");
+  tablinks = document.querySelectorAll(`#${parentTab} .tab-links .tab-link`);
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].classList.remove("active");
   }
-  document.getElementById(tabName).classList.add("active");
+  document.getElementById(tabName).style.display = "block";
   evt.currentTarget.classList.add("active");
 }
 </script>
-
-<!-- Footer Section -->
-<footer class="footer">
-  <p>&copy; 2023 Ingleburn RSL Cricket Club. All Rights Reserved.</p>
-</footer>
 
 </body>
 </html>
