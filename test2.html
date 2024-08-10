@@ -301,36 +301,62 @@ showSlides();
   <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
 </footer>
 
-<!-- Tab Navigation Script -->
+<!-- Tab Scripts -->
 <script>
 function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
+  
+  // Hide all tab content
   tabcontent = document.getElementsByClassName("tab-content");
   for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+    tabcontent[i].classList.remove("active");
   }
+
+  // Remove "active" class from all tab links
   tablinks = document.getElementsByClassName("tab-link");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].classList.remove("active");
   }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
+
+  // Show the clicked tab content
+  document.getElementById(tabName).classList.add("active");
+  evt.currentTarget.classList.add("active");
+
+  // If the "Teams" tab is clicked, ensure "Juniors" is active by default
+  if (tabName === "Teams") {
+    openNestedTab(null, 'Juniors', 'Teams');
+  }
 }
 
-function openNestedTab(evt, tabName, parentTab) {
-  let i, tabcontent, tablinks, parentTabContent;
-  parentTabContent = document.getElementById(parentTab);
-  tabcontent = parentTabContent.getElementsByClassName("tab-content");
+function openNestedTab(evt, nestedTabName, parentTabName) {
+  let i, tabcontent, tablinks;
+
+  // Hide all nested tab content within the parent tab
+  tabcontent = document.querySelectorAll(`#${parentTabName} .tab-content`);
   for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+    tabcontent[i].classList.remove("active");
   }
-  tablinks = parentTabContent.getElementsByClassName("tab-link");
+
+  // Remove "active" class from all nested tab links within the parent tab
+  tablinks = document.querySelectorAll(`#${parentTabName} .tab-link`);
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].classList.remove("active");
   }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
+
+  // Show the clicked nested tab content
+  document.getElementById(nestedTabName).classList.add("active");
+  if (evt) {
+    evt.currentTarget.classList.add("active");
+  } else {
+    // If no event, set the first nested tab link (Juniors) as active by default
+    document.querySelector(`#${parentTabName} .tab-link`).classList.add("active");
+  }
 }
+
+// Initially set the Juniors tab as active when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+  openTab(null, 'Teams');
+});
 </script>
 
 </body>
