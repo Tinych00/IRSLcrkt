@@ -8,7 +8,7 @@
     /* Global Styles */
     body {
       font-family: Arial, sans-serif;
-      background-color: #00ffea;
+      background-color: #FFE01A;
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -172,7 +172,6 @@
 <!-- Slideshow -->
 <div class="slideshow-container">
   <div class="slides">
-    <!-- <img src="assets/3.jpg" style="width:100%"> -->
     <img src="assets/1.jpg" style="width:100%">
     <img src="assets/9.jpg" style="width:100%">
     <img src="assets/14.jpg" style="width:100%">
@@ -208,7 +207,6 @@ showSlides();
   <div class="tab-links">
     <button class="tab-link active" onclick="openTab(event, 'Teams')">Teams</button>
     <button class="tab-link" onclick="openTab(event, 'fixtures')">Fixtures</button>
-    <button class="tab-link" onclick="openTab(event, 'results')">Results</button>
     <button class="tab-link" onclick="openTab(event, 'registration')">Registration</button>
   </div>
 
@@ -239,125 +237,69 @@ showSlides();
           <h3>Brett Watts</h3>
           <p><strong>Secretary</strong></p>
           <p>📞 0431 224 344</p>
-          <p>✉️ <a href="mailto:brettwatts291@gmail.com">brettwatts291@gmail.com</a></p>
+          <p>✉️ <a href="mailto:bwatts1@live.com.au">bwatts1@live.com.au</a></p>
         </div>
         <div class="contact-card">
-          <h3>Brad Collins</h3>
+          <h3>David Peters</h3>
           <p><strong>Treasurer</strong></p>
-          <p>📞 0401 909 166</p>
-          <p>✉️ <a href="mailto:brad_collins@optusnet.com.au">brad_collins@optusnet.com.au</a></p>
+          <p>📞 0434 111 555</p>
+          <p>✉️ <a href="mailto:davidpeters@gmail.com">davidpeters@gmail.com</a></p>
         </div>
       </div>
     </div>
 
     <div id="Seniors" class="tab-content">
       <h2>Senior Team Information</h2>
-      <p>The Ingleburn RSL Cricket Club also offers competitive opportunities for senior players. Our senior teams participate in local leagues, and we emphasize teamwork, skill development, and enjoyment of the game.</p>
-
-      <!-- Contact Information for Seniors -->
-      <div class="contact-info">
-        <div class="contact-card">
-          <h3>Jason Bingham</h3>
-          <p><strong>Senior Vice President</strong></p>
-          <p>📞 0410 692 323</p>
-          <p>✉️ <a href="mailto:jasobingham10@gmail.com">jasobingham10@gmail.com</a></p>
-        </div>
-        <div class="contact-card">
-          <h3>Dan Turner</h3>
-          <p><strong>Senior Team Manager</strong></p>
-          <p>📞 0419 733 888</p>
-          <p>✉️ <a href="mailto:danturner99@gmail.com">danturner99@gmail.com</a></p>
-        </div>
-        <div class="contact-card">
-          <h3>Mark Leslie</h3>
-          <p><strong>Head Coach</strong></p>
-          <p>📞 0421 336 997</p>
-          <p>✉️ <a href="mailto:marklesliecct@gmail.com">marklesliecct@gmail.com</a></p>
-        </div>
-      </div>
+      <p>Details about the Senior teams will be added here.</p>
     </div>
   </div>
 
-  <!-- Additional tabs -->
+  <!-- Fixtures Tab Content -->
   <div id="fixtures" class="tab-content">
-    <h2>Fixtures</h2>
-    <p>Content for Fixtures will be added here.</p>
+    <h2>Fixture List</h2>
+    <p>The fixtures for the current season will be updated here.</p>
   </div>
 
-  <div id="results" class="tab-content">
-    <h2>Results</h2>
-    <p>Content for Results will be added here.</p>
-  </div>
-
+  <!-- Registration Tab Content -->
   <div id="registration" class="tab-content">
-    <h2>Registration</h2>
-    <p>Content for Registration will be added here.</p>
+    <h2>Registration Details</h2>
+    <p>Information about the registration process will be available soon.</p>
   </div>
-
 </div>
 
-<!-- Footer Section -->
+<!-- Footer -->
 <footer class="footer">
-  <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
+  <p>&copy; 2024 Ingleburn RSL Cricket Club. All Rights Reserved.</p>
 </footer>
 
-<!-- Tab Scripts -->
 <script>
-function openTab(evt, tabName) {
-  let i, tabcontent, tablinks;
-  
-  // Hide all tab content
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.remove("active");
-  }
-
-  // Remove "active" class from all tab links
-  tablinks = document.getElementsByClassName("tab-link");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active");
-  }
-
-  // Show the clicked tab content
-  document.getElementById(tabName).classList.add("active");
-  evt.currentTarget.classList.add("active");
-
-  // If the "Teams" tab is clicked, ensure "Juniors" is active by default
-  if (tabName === "Teams") {
-    openNestedTab(null, 'Juniors', 'Teams');
-  }
-}
-
-function openNestedTab(evt, nestedTabName, parentTabName) {
-  let i, tabcontent, tablinks;
-
-  // Hide all nested tab content within the parent tab
-  tabcontent = document.querySelectorAll(`#${parentTabName} .tab-content`);
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.remove("active");
-  }
-
-  // Remove "active" class from all nested tab links within the parent tab
-  tablinks = document.querySelectorAll(`#${parentTabName} .tab-link`);
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active");
-  }
-
-  // Show the clicked nested tab content
-  document.getElementById(nestedTabName).classList.add("active");
-  if (evt) {
+  function openTab(evt, tabName) {
+    let i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].classList.remove("active");
+    }
+    tablinks = document.getElementsByClassName("tab-link");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+    document.getElementById(tabName).classList.add("active");
     evt.currentTarget.classList.add("active");
-  } else {
-    // If no event, set the first nested tab link (Juniors) as active by default
-    document.querySelector(`#${parentTabName} .tab-link`).classList.add("active");
   }
-}
 
-// Initially set the Juniors tab as active when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-  openTab(null, 'Teams');
-});
+  function openNestedTab(evt, tabName, parentTab) {
+    let i, tabcontent, tablinks;
+    tabcontent = document.getElementById(parentTab).getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].classList.remove("active");
+    }
+    tablinks = document.getElementById(parentTab).getElementsByClassName("tab-link");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
 </script>
-
 </body>
 </html>
