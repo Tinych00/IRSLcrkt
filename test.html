@@ -186,13 +186,14 @@ showSlides();
     <button class="tab-link" onclick="openTab(event, 'membership')">Membership</button>
   </div>
 
+  <!-- Teams Tab Content -->
   <div id="Teams" class="tab-content active">
     <div class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'Junior')">Junior</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'Senior')">Senior</button>
+      <button class="tab-link active" onclick="openNestedTab(event, 'Juniors')">Juniors</button>
+      <button class="tab-link" onclick="openNestedTab(event, 'Seniors')">Seniors</button>
     </div>
 
-    <div id="Junior" class="tab-content active">
+    <div id="Juniors" class="tab-content active">
       <h2>Junior Team Information</h2>
       <p>The Ingleburn RSL Cricket Club is a community-based club that welcomes players of all ages and skill levels. We have a strong tradition of sportsmanship and fair play, and we are proud to be part of the local community.</p>
       <h2>Club Details</h2>
@@ -206,7 +207,7 @@ showSlides();
       <p><strong>Address:</strong> 123 Main Street, Ingleburn, NSW 2565</p>
     </div>
 
-    <div id="Senior" class="tab-content">
+    <div id="Seniors" class="tab-content">
       <h2>Senior Team Information</h2>
       <p><strong>Location:</strong> Ingleburn, NSW</p>
       <p><strong>Established:</strong> 1972</p>
@@ -219,20 +220,60 @@ showSlides();
     </div>
   </div>
 
+  <!-- Fixtures Tab Content -->
   <div id="fixtures" class="tab-content">
-    <h2>Upcoming Fixtures</h2>
-    <p>Here you can find information about our upcoming matches and tournaments.</p>
+    <div class="tab-links">
+      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsFixtures')">Juniors</button>
+      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsFixtures')">Seniors</button>
+    </div>
+
+    <div id="JuniorsFixtures" class="tab-content active">
+      <h2>Junior Fixtures</h2>
+      <p>Here you can find the upcoming fixtures for our junior teams.</p>
+    </div>
+
+    <div id="SeniorsFixtures" class="tab-content">
+      <h2>Senior Fixtures</h2>
+      <p>Here you can find the upcoming fixtures for our senior teams.</p>
+    </div>
   </div>
 
+  <!-- Results Tab Content -->
   <div id="results" class="tab-content">
-    <h2>Latest Results</h2>
-    <p>Check out the results of our recent games and performances.</p>
+    <div class="tab-links">
+      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsResults')">Juniors</button>
+      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsResults')">Seniors</button>
+    </div>
+
+    <div id="JuniorsResults" class="tab-content active">
+      <h2>Junior Results</h2>
+      <p>Check out the latest results from our junior teams.</p>
+    </div>
+
+    <div id="SeniorsResults" class="tab-content">
+      <h2>Senior Results</h2>
+      <p>Check out the latest results from our senior teams.</p>
+    </div>
   </div>
 
-  <div id="membership" class="tab-content">
-    <h2>Membership Information</h2>
-    <p>Interested in joining the club? Here you can find all the details you need to become a member.</p>
+  <!-- Membership Tab Content -->
+  <div id="registration" class="tab-content"> 
+    <div class="tab-links">
+      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsMembership')">Juniors</button>
+      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsMembership')">Seniors</button>
+    </div>
+
+    <div id="Juniorsregistration" class="tab-content active">
+      <h2>Juniors registration Information</h2>
+      <p>Interested in joining our junior teams? Here's how you can become a member.</p>
+    </div>
+
+    <div id="Seniorsregistration" class="tab-content">
+      <h2>Seniors registration Information</h2>
+      <p>Interested in joining our senior teams? Here's how you can become a member.</p>
+    </div>
   </div>
+
 </div>
 
 <!-- Tab Script -->
