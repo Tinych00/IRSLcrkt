@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ingleburn RSL Cricket Club</title>
+  <title>Ingleburn RSL Cricket Club - Events</title>
   <style>
     /* Global Styles */
     body {
@@ -33,7 +33,7 @@
       margin-right: 15px; 
     }
     .navbar .logo h2 {
-      color: #ffff00; /* Yellow color for logo text */
+      color: #ffff00; /* Yellow font color for the logo text */
       margin: 0;
     }
     .navbar ul {
@@ -69,55 +69,32 @@
     .header h1 {
       font-size: 3em;
     }
-    .slideshow-container {
-      max-width: 1000px;
-      margin: 20px auto;
-      position: relative;
-      overflow: hidden;
-    }
-    .slides img {
-      width: 100%;
-      height: auto;
-      max-height: 500px;
-      object-fit: cover;
-      display: none;
-    }
     .container {
       max-width: 1200px;
       margin: 20px auto;
       padding: 20px;
       background-color: #fff;
     }
-    .tab-links {
-      display: flex;
-      justify-content: space-around;
-      border-bottom: 2px solid #e0e0e0;
+    h2 {
+      color: #2557B6;
       margin-bottom: 20px;
+      text-align: center;
     }
-    .tab-links button {
-      background: none;
-      border: none;
-      color: #000;
-      padding: 10px 20px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background-color 0.3s ease, color 0.3s ease;
+    .event {
+      background-color: #f9f9f9;
+      border-left: 4px solid #2557B6;
+      margin-bottom: 20px;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    .tab-links button.active {
-      background-color: #e0e0e0;
-      border-radius: 5px;
+    .event h3 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #333;
     }
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
-    }
-    .tab-content img {
-      width: 80%; /* Adjusted width to 80% */
-      display: block;
-      margin: 20px auto; /* Center the image */
+    .event p {
+      margin: 5px 0;
+      color: #666;
     }
     .footer {
       background-color: #2557B6; 
@@ -138,72 +115,57 @@
       <h2>Ingleburn RSL Cricket Club</h2>
     </a>
   </div>
-  <ul>          
-            <li><a href="Registration.html">Registration</a></li>
-            <li><a href="Fixture_Results.html">Fixture/Results</a></li>
-            <li><a href="About_Us.html">About Us</a></li>
-            <li><a href="Events.html">Events</a></li>
-            <li><a href="Gallery.html">Gallery</a></li>
-            <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
-            <li><a href="Contact.html">Contact</a></li>
+  <ul>
+    <li><a href="Registration.html">Registration</a></li>
+    <li><a href="Fixture_Results.html">Fixture/Results</a></li>
+    <li><a href="About_Us.html">About Us</a></li>
+    <li><a href="Events.html">Events</a></li>
+    <li><a href="Gallery.html">Gallery</a></li>
+    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
 </nav>
 
 <!-- Header Section -->
 <header class="header">
-  <h1>Club Registration</h1>
+  <h1>Upcoming Events</h1>
 </header>
 
 <!-- Main Content -->
 <div class="container">
-  <div class="tab-links">
-    <button class="tab-link active" onclick="openTab(event, 'Juniors')">Juniors</button>
-    <button class="tab-link" onclick="openTab(event, 'Seniors')">Seniors</button>
+  <h2>Join Us for These Exciting Events</h2>
+
+  <!-- Event 1 -->
+  <div class="event">
+    <h3>Training Day</h3>
+    <p><strong>Date:</strong> 15 August 2024</p>
+    <p><strong>Time:</strong> 10:00 AM - 1:00 PM</p>
+    <p><strong>Location:</strong> Ingleburn Oval</p>
+    <p>Get ready for the season with our comprehensive training day. Open to all members, this is a great opportunity to hone your skills and get to know your teammates.</p>
   </div>
 
-  <!-- Juniors Tab Content -->
-  <div id="Juniors" class="tab-content active">
-    <h2>Junior Team Registration</h2>
-    <p>Ready to join the Ingleburn RSL Cricket Club as a junior player from ages 9-18? Click the link below to get started!</p>
-    <p><a href="https://www.playhq.com/cricket-australia/register/151203" target="_blank">Junior Registration</a></p>
-    <img src="assets/7.jpg" style="width:80%">
+  <!-- Event 2 -->
+  <div class="event">
+    <h3>Team Meeting</h3>
+    <p><strong>Date:</strong> 20 August 2024</p>
+    <p><strong>Time:</strong> 6:00 PM - 8:00 PM</p>
+    <p><strong>Location:</strong> Ingleburn RSL Clubhouse</p>
+    <p>Join us for a team meeting to discuss the upcoming season, strategies, and expectations. This is a mandatory meeting for all team members.</p>
   </div>
 
-  <!-- Seniors Tab Content -->
-  <div id="Seniors" class="tab-content">
-    <h2>Senior Team Registration</h2>
-    <p>Ready to join the Ingleburn RSL Cricket Club as a senior player from ages 18+? Click the link below to get started!</p>
-    <p><a href="https://www.playhq.com/cricket-australia/register/3250d2" target="_blank">Senior Registration</a></p>
-    <img src="assets/15.jpg" style="width:80%">
+  <!-- Event 3 -->
+  <div class="event">
+    <h3>Presentation Night</h3>
+    <p><strong>Date:</strong> 30 August 2024</p>
+    <p><strong>Time:</strong> 7:00 PM - 10:00 PM</p>
+    <p><strong>Location:</strong> Ingleburn RSL Club</p>
+    <p>Celebrate the season's achievements at our annual presentation night. Awards, speeches, and a night of fun await all attendees. Family and friends are welcome!</p>
   </div>
 </div>
 
-<!-- Tab Navigation Script -->
-<script>
-function openTab(evt, tabName) {
-  // Hide all tabs
-  let i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.remove("active");
-  }
-
-  // Show the selected tab
-  document.getElementById(tabName).classList.add("active");
-
-  // Remove the active class from all tab links
-  tablinks = document.getElementsByClassName("tab-link");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active");
-  }
-
-  // Add the active class to the clicked tab link
-  evt.currentTarget.classList.add("active");
-}
-</script>
-
-<!-- Footer Section -->
+<!-- Footer -->
 <footer class="footer">
-  <p>&copy; 2024 Ingleburn RSL Cricket Club. All Rights Reserved.</p>
+  <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
 </footer>
 
 </body>
