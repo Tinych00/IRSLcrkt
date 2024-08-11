@@ -1,1 +1,301 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ingleburn RSL Cricket Club</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFE01A;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .navbar {
+      background-color: #2557B6;
+      padding: 10px 20px;
+      color: #fff; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .logo a {
+      text-decoration: none;
+      color: #ffff00;
+      display: flex;
+      align-items: center;
+    }
+    .navbar .logo img {
+      width: 100px; 
+      margin-right: 15px; 
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+    }
+    .navbar ul li {
+      margin-left: 20px;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 20px;
+      transition: background-color 0.3s ease;
+    }
+    .navbar a:hover {
+      background-color: #204998;
+      border-radius: 5px;
+    }
+    .header {
+      background-image: url('header-image.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    .header h1 {
+      font-size: 3em;
+    }
+    .slideshow-container {
+      max-width: 1000px;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      display: none;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+    }
+    .tab-links {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+    .tab-links button {
+      background: none;
+      border: none;
+      color: #000;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .tab-links button.active {
+      background-color: #2557B6;
+      color: #fff;
+      border-radius: 5px;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .footer {
+      background-color: #2557B6; 
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+    }
+    /* Contact Information Styles */
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .contact-card {
+      width: 30%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .contact-card h3 {
+      margin-bottom: 5px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    .contact-card p {
+      margin: 5px 0;
+      color: #666;
+    }
+    .contact-card a {
+      color: #2557B6;
+      text-decoration: none;
+    }
+
+ {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .contact-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+        .contact-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .contact-info {
+            padding: 20px;
+        }
+        .contact-info h2 {
+            margin: 10px 0;
+            font-size: 22px;
+            color: #333;
+        }
+        .contact-info p {
+            margin: 5px 0;
+            color: #777;
+        }
+        .contact-info a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .contact-info a:hover {
+            background-color: #0056b3;
+        }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
+      <h2>Ingleburn RSL Cricket Club</h2>
+    </a>
+  </div>
+  <ul>
+    <li><a href="Registration.html">Registration</a></li>
+    <li><a href="Teams.html">Teams</a></li>
+    <li><a href="Events.html">Events</a></li>
+    <li><a href="Gallery.html">Gallery</a></li>
+    <li><a href="Contact.html">Contact</a></li> 
+    <li><a href="About_Us.html">About Us</a></li>
+    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
+  </ul>
+</nav>
+
+<div class="contacts-grid">
+    <div class="contact-card">
+    
+        <div class="contact-info">
+            <h2>Gerrard Riley</h2>
+            <p>President</p>
+    		<p>Phone: 0491 570 006
+            <p>Email: President@example.com</p>
+            <a href="President@example.com">Contact</a>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-info">
+            <h2>Peter Stephen</h2>
+            <p>Vice President</p>
+			<p>Phone: 0491 570 006
+            <p>Email: Vice_President@example.com</p>
+            <a href="mailto:Vice_President@example.com">Contact</a>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-info">
+            <h2>Paul Norton</h2>
+            <p>Treasurer</p>
+			<p>Phone: 0491 570 006
+            <p>Email: Treasurer@example.com</p>
+            <a href="mailto:Treasurer@example.com">Contact</a>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-info">
+            <h2>Brett Watts</h2>
+            <p>Secretary</p>
+			<p>Phone: 0491 570 006
+            <p>Email: Secretary@example.com</p>
+            <a href="mailto:Secretary@example.com">Contact</a>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-info">
+            <h2>Sarah O'Rourke</h2>
+            <p>Junior Vice President</p>
+			<p>Phone: 0491 570 006
+            <p>Email: Junior_Vice_President@example.com</p>
+            <a href="mailto:Junior_Vice_President@example.com">Contact</a>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-info">
+            <h2>Jason Darr</h2>
+            <p>Child Safety Officer</p>
+			<p>Phone: 0491 570 006
+            <p>Email: Child_Safety_Officer@example.com</p>
+            <a href="mailto:Child_Safety_Officer@example.com">Contact</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2023 Ingleburn RSL Cricket Club. All rights reserved.</p>
+</footer>
+
+<!
+
+</body>
+</html>
