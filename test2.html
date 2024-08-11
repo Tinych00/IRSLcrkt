@@ -32,6 +32,10 @@
       width: 100px; 
       margin-right: 15px; 
     }
+    .navbar .logo h2 {
+      color: #ffff00; /* Yellow color for logo text */
+      margin: 0;
+    }
     .navbar ul {
       list-style: none;
       display: flex;
@@ -101,8 +105,7 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
     .tab-links button.active {
-      background-color: #2557B6;
-      color: #fff;
+      background-color: #e0e0e0;
       border-radius: 5px;
     }
     .tab-content {
@@ -111,35 +114,17 @@
     .tab-content.active {
       display: block;
     }
+    .tab-content img {
+      width: 80%; /* Adjusted width to 80% */
+      display: block;
+      margin: 20px auto; /* Center the image */
+    }
     .footer {
       background-color: #2557B6; 
       color: #fff;
       text-align: center;
       padding: 20px;
       margin-top: auto;
-    }
-    /* Contact Information Styles */
-    .contact-info {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-    .contact-card {
-      width: 30%;
-      text-align: center;
-    }
-    .contact-card h3 {
-      margin-bottom: 5px;
-      font-size: 1.2em;
-      color: #333;
-    }
-    .contact-card p {
-      margin: 5px 0;
-      color: #666;
-    }
-    .contact-card a {
-      color: #2557B6;
-      text-decoration: none;
     }
   </style>
 </head>
@@ -153,82 +138,72 @@
       <h2>Ingleburn RSL Cricket Club</h2>
     </a>
   </div>
-  <ul>
-    <li><a href="Registration.html">Registration</a></li>
-    <li><a href="Fixture_Results.html">Fixture/Results</a></li>
-    <li><a href="About_Us.html">About Us</a></li>
-    <li><a href="Events.html">Events</a></li>
-    <li><a href="Gallery.html">Gallery</a></li>
-    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
-    <li><a href="Contact.html">Contact</a></li>
-  </ul>
+  <ul>          
+            <li><a href="Registration.html">Registration</a></li>
+            <li><a href="Fixture_Results.html">Fixture/Results</a></li>
+            <li><a href="About_Us.html">About Us</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
+            <li><a href="Contact.html">Contact</a></li>
 </nav>
 
 <!-- Header Section -->
 <header class="header">
-  <h1>Welcome to Ingleburn RSL Cricket Club</h1>
+  <h1>Club Registration</h1>
 </header>
 
-<!-- Slideshow -->
-<div class="slideshow-container">
-  <div class="slides">
-    <img src="assets/1.jpg" style="width:100%">
-    <img src="assets/9.jpg" style="width:100%">
-    <img src="assets/14.jpg" style="width:100%">
-    <img src="assets/7.jpg" style="width:100%">
-    <img src="assets/10.jpg" style="width:100%">       
-    <img src="assets/17.jpg" style="width:100%">
-    <img src="assets/15.jpg" style="width:100%">
-    <img src="assets/12.jpg" style="width:100%">
-    <img src="assets/6.jpg" style="width:100%">
-    <img src="assets/4.jpg" style="width:100%">
-    <img src="assets/18.jpg" style="width:100%">
-    <img src="assets/8.jpg" style="width:100%">
-    <img src="assets/5.jpg" style="width:100%">
+<!-- Main Content -->
+<div class="container">
+  <div class="tab-links">
+    <button class="tab-link active" onclick="openTab(event, 'Juniors')">Juniors</button>
+    <button class="tab-link" onclick="openTab(event, 'Seniors')">Seniors</button>
+  </div>
+
+  <!-- Juniors Tab Content -->
+  <div id="Juniors" class="tab-content active">
+    <h2>Junior Team Registration</h2>
+    <p>Ready to join the Ingleburn RSL Cricket Club as a junior player from ages 9-18? Click the link below to get started!</p>
+    <p><a href="https://www.playhq.com/cricket-australia/register/151203" target="_blank">Junior Registration</a></p>
+    <img src="assets/7.jpg" style="width:80%">
+  </div>
+
+  <!-- Seniors Tab Content -->
+  <div id="Seniors" class="tab-content">
+    <h2>Senior Team Registration</h2>
+    <p>Ready to join the Ingleburn RSL Cricket Club as a senior player from ages 18+? Click the link below to get started!</p>
+    <p><a href="https://www.playhq.com/cricket-australia/register/3250d2" target="_blank">Senior Registration</a></p>
+    <img src="assets/15.jpg" style="width:80%">
   </div>
 </div>
 
-<!-- Slideshow Script -->
+<!-- Tab Navigation Script -->
 <script>
-let slideIndex = 0;
-function showSlides() {
-  let slides = document.querySelectorAll(".slides img");
-  slides.forEach((slide) => slide.style.display = "none");
-  slideIndex++;
-  if (slideIndex > slides.length) slideIndex = 1;
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000); // Change image every 4 seconds
+function openTab(evt, tabName) {
+  // Hide all tabs
+  let i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].classList.remove("active");
+  }
+
+  // Show the selected tab
+  document.getElementById(tabName).classList.add("active");
+
+  // Remove the active class from all tab links
+  tablinks = document.getElementsByClassName("tab-link");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+
+  // Add the active class to the clicked tab link
+  evt.currentTarget.classList.add("active");
 }
-showSlides();
 </script>
 
-<!-- Contact Information Section -->
-<div class="container">
-  <div class="contact-info">
-    <div class="contact-card">
-      <h3>Gerrard Riley</h3>
-      <p><strong>President</strong></p>
-      <p>📞 0416 263 333</p>
-      <p>✉️ <a href="mailto:gerrardriley@hotmail.com">gerrardriley@hotmail.com</a></p>
-    </div>
-    <div class="contact-card">
-      <h3>Brett Watts</h3>
-      <p><strong>Secretary</strong></p>
-      <p>📞 0431 224 344</p>
-      <p>✉️ <a href="mailto:bwatts1@live.com.au">bwatts1@live.com.au</a></p>
-    </div>
-    <div class="contact-card">
-      <h3>Mark Jensen</h3>
-      <p><strong>Treasurer</strong></p>
-      <p>📞 0405 021 345</p>
-      <p>✉️ <a href="mailto:markjensen@gmail.com">markjensen@gmail.com</a></p>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
+<!-- Footer Section -->
 <footer class="footer">
-  <p>&copy; 2023 Ingleburn RSL Cricket Club. All rights reserved.</p>
+  <p>&copy; 2024 Ingleburn RSL Cricket Club. All Rights Reserved.</p>
 </footer>
 
 </body>
