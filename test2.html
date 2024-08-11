@@ -204,32 +204,7 @@ function showSlides() {
 showSlides();
 </script>
 
-<!-- Main Content -->
-<div class="container">
-  <div class="tab-links">
-    <button class="tab-link active" onclick="openTab(event, 'Teams')">Teams</button>
-    <button class="tab-link" onclick="openTab(event, 'fixtures')">Fixtures</button>
-    <button class="tab-link" onclick="openTab(event, 'results')">Results</button>
-    <button class="tab-link" onclick="openTab(event, 'registration')">Registration</button>
-  </div>
 
-  <!-- Teams Tab Content -->
-  <div id="Teams" class="tab-content active">
-    <div id="JuniorSeniorTabs" class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'Juniors', 'Teams')">Juniors</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'Seniors', 'Teams')">Seniors</button>
-    </div>
-
-    <div id="Juniors" class="tab-content active">
-      <h2>Junior Team Information</h2>
-      <p>The Ingleburn RSL Cricket Club is a community-based club that welcomes players of all ages and skill levels. We have a strong tradition of sportsmanship and fair play, and we are proud to be part of the local community.</p>
-      
-      <h2>Club Details</h2>
-      <p><strong>Location:</strong> Ingleburn, NSW</p>
-      <p><strong>Established:</strong> 1972</p>
-
-      <!-- Contact Information for Juniors -->
-      <div class="contact-info">
         <div class="contact-card">
           <h3>Gerrard Riley</h3>
           <p><strong>President</strong></p>
@@ -251,84 +226,13 @@ showSlides();
       </div>
     </div>
 
-    <div id="Seniors" class="tab-content">
-      <h2>Senior Team Information</h2>
-      <p>The senior teams at Ingleburn RSL Cricket Club are competitive and dedicated, with a strong focus on teamwork and development.</p>
-
-      <!-- Contact Information for Seniors -->
-      <div class="contact-info">
-        <div class="contact-card">
-          <h3>David Smith</h3>
-          <p><strong>Senior Team Manager</strong></p>
-          <p>📞 0456 789 101</p>
-          <p>✉️ <a href="mailto:davidsmith@gmail.com">davidsmith@gmail.com</a></p>
-        </div>
-        <div class="contact-card">
-          <h3>John Doe</h3>
-          <p><strong>Senior Coach</strong></p>
-          <p>📞 0402 123 456</p>
-          <p>✉️ <a href="mailto:john.doe@gmail.com">john.doe@gmail.com</a></p>
-        </div>
-        <div class="contact-card">
-          <h3>Jane Doe</h3>
-          <p><strong>Assistant Coach</strong></p>
-          <p>📞 0412 345 678</p>
-          <p>✉️ <a href="mailto:jane.doe@gmail.com">jane.doe@gmail.com</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Fixtures Tab Content -->
-  <div id="fixtures" class="tab-content">
-    <h2>Fixtures</h2>
-    <p>Details about upcoming matches and fixtures will be provided here.</p>
-  </div>
-
-  <!-- Results Tab Content -->
-  <div id="results" class="tab-content">
-    <h2>Results</h2>
-    <p>Match results and team standings will be updated here.</p>
-  </div>
-
-  <!-- Registration Tab Content -->
-  <div id="registration" class="tab-content">
-    <h2>Registration</h2>
-    <p>Information on how to register for the upcoming season.</p>
-  </div>
-</div>
 
 <!-- Footer -->
 <footer class="footer">
   <p>&copy; 2023 Ingleburn RSL Cricket Club. All rights reserved.</p>
 </footer>
 
-<!-- Tab Functionality Script -->
-<script>
-  function openTab(evt, tabName) {
-    let i, tabcontent, tablinks;
-    tabcontent = document.querySelectorAll(".tab-content");
-    tablinks = document.querySelectorAll(".tab-link");
-    
-    tabcontent.forEach(content => content.classList.remove("active"));
-    tablinks.forEach(link => link.classList.remove("active"));
-    
-    document.getElementById(tabName).classList.add("active");
-    evt.currentTarget.classList.add("active");
-  }
-
-  function openNestedTab(evt, tabName, parentTab) {
-    let i, tabcontent, tablinks;
-    tabcontent = document.querySelectorAll(`#${parentTab} .tab-content`);
-    tablinks = document.querySelectorAll(`#${parentTab} .tab-link`);
-    
-    tabcontent.forEach(content => content.classList.remove("active"));
-    tablinks.forEach(link => link.classList.remove("active"));
-    
-    document.getElementById(tabName).classList.add("active");
-    evt.currentTarget.classList.add("active");
-  }
-</script>
+<!
 
 </body>
 </html>
