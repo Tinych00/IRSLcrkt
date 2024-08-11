@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,6 +98,7 @@
       font-weight: bold;
       cursor: pointer;
       font-size: 1em;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     .tab-links button.active {
       background-color: #e0e0e0;
@@ -109,6 +109,11 @@
     }
     .tab-content.active {
       display: block;
+    }
+    .tab-content img {
+      width: 80%; /* Adjusted width to 80% */
+      display: block;
+      margin: 20px auto; /* Center the image */
     }
     .footer {
       background-color: #2557B6; 
@@ -147,28 +152,24 @@
 <!-- Main Content -->
 <div class="container">
   <div class="tab-links">
-    <button class="tab-link" onclick="openTab(event, 'registration')">Registration</button>
+    <button class="tab-link active" onclick="openTab(event, 'Juniors')">Juniors</button>
+    <button class="tab-link" onclick="openTab(event, 'Seniors')">Seniors</button>
   </div>
 
+  <!-- Juniors Tab Content -->
+  <div id="Juniors" class="tab-content active">
+    <h2>Junior Team Registration</h2>
+    <p>Ready to join the Ingleburn RSL Cricket Club as a junior player from ages 9-18? Click the link below to get started!</p>
+    <p><a href="https://www.playhq.com/cricket-australia/register/151203" target="_blank">Junior Registration</a></p>
+    <img src="assets/7.jpg" style="width:80%">
+  </div>
 
-  <!-- Registration Tab Content -->
-  <div id="registration" class="tab-content">
-    <div id="JuniorSeniorTabs" class="tab-links">
-      <button class="tab-link active" onclick="openNestedTab(event, 'JuniorsRegistration', 'registration')">Juniors</button>
-      <button class="tab-link" onclick="openNestedTab(event, 'SeniorsRegistration', 'registration')">Seniors</button>
-    </div>
-
-    <div id="JuniorsRegistration" class="tab-content active">
-      <h2>Junior Team Registration</h2>
-      <p>Ready to join the Ingleburn RSL Cricket Club as a junior player? Click the link below to get started!</p>
-      <p><a href="https://www.playhq.com/cricket-australia/register/151203" target="_blank">Junior Registration</a></p>
-    </div>
-
-    <div id="SeniorsRegistration" class="tab-content">
-      <h2>Senior Team Registration</h2>
-      <p>Ready to join the Ingleburn RSL Cricket Club as a senior player? Click the link below to get started!</p>
-      <p><a href="https://www.playhq.com/cricket-australia/register/3250d2" target="_blank">Senior Registration</a></p>
-    </div>
+  <!-- Seniors Tab Content -->
+  <div id="Seniors" class="tab-content">
+    <h2>Senior Team Registration</h2>
+    <p>Ready to join the Ingleburn RSL Cricket Club as a senior player from ages 18+? Click the link below to get started!</p>
+    <p><a href="https://www.playhq.com/cricket-australia/register/3250d2" target="_blank">Senior Registration</a></p>
+    <img src="assets/15.jpg" style="width:80%">
   </div>
 </div>
 
@@ -181,40 +182,18 @@ function openTab(evt, tabName) {
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].classList.remove("active");
   }
+
   // Show the selected tab
   document.getElementById(tabName).classList.add("active");
 
-  // Always default to Juniors section
-  let nestedTabs = document.getElementById(tabName).querySelectorAll(".tab-content");
-  for (i = 0; i < nestedTabs.length; i++) {
-    nestedTabs[i].classList.remove("active");
-  }
-  document.getElementById("Juniors" + tabName.replace('Teams', '').replace('Fixtures', 'Fixtures').replace('Results', 'Results').replace('Registration', 'Registration')).classList.add("active");
-
-  // Hide the nested tabs not related to the current tab
-  document.getElementById(tabName).querySelector("#JuniorSeniorTabs").style.display = "block";
-  evt.currentTarget.classList.add("active");
-}
-
-function openNestedTab(evt, tabName, parentTabName) {
-  let i, tabcontent, tablinks;
-  tabcontent = document.getElementById(parentTabName).getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.remove("active");
-  }
-  tablinks = document.getElementById(parentTabName).getElementsByClassName("tab-link");
+  // Remove the active class from all tab links
+  tablinks = document.getElementsByClassName("tab-link");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].classList.remove("active");
   }
-  document.getElementById(tabName).classList.add("active");
-  evt.currentTarget.classList.add("active");
 
-  // Show/hide nested tabs depending on active tab
-  if (tabName.includes("Juniors")) {
-    document.querySelector("#JuniorSeniorTabs .tab-link:nth-child(2)").style.display = "none";
-  } else {
-    document.querySelector("#JuniorSeniorTabs .tab-link:nth-child(1)").style.display = "none";
-  }
+  // Add the active class to the clicked tab link
+  evt.currentTarget.classList.add("active");
 }
 </script>
 
