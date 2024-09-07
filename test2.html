@@ -1,169 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us - Ingleburn RSL Cricket Club</title>
-  <style>
-    /* Global Styles */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #FFE01A;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .navbar {
-      background-color: #2557B6;
-      padding: 10px 20px;
-      color: #fff; 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .navbar .logo a {
-      text-decoration: none;
-      color: #ffff00;
-      display: flex;
-      align-items: center;
-    }
-    .navbar .logo img {
-      width: 100px; 
-      margin-right: 15px; 
-    }
-    /* Make the text in the logo yellow */
-    .navbar .logo a h2 {
-      color: #ffff00;
-    }
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-    }
-    .navbar ul li {
-      margin-left: 20px;
-    }
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 14px 20px;
-      transition: background-color 0.3s ease;
-    }
-    .navbar a:hover {
-      background-color: #204998;
-      border-radius: 5px;
-    }
-    .header {
-      background-image: url('header-image.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-    .header h1 {
-      font-size: 3em;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-    }
-    h2 {
-      color: #2557B6;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .history {
-      margin-bottom: 40px;
-    }
-    .history h3 {
-      font-size: 1.8em; /* Consistent font size for all h3 elements */
-      color: #333;
-      margin-bottom: 10px;
-    }
-    .history p {
-      font-size: 1em;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .footer {
-      background-color: #2557B6; 
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sports Club - Upcoming Events & Notifications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        /* Events Section */
+        #events-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .event-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .event-item:hover {
+            transform: scale(1.05);
+        }
+
+        .event-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .event-item p {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        /* Notifications Section */
+        #notifications-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .notification-item {
+            background-color: #ffefc3;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-item h4 {
+            margin-bottom: 10px;
+            color: #d9534f;
+        }
+
+        .notification-item p {
+            font-size: 1em;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
-      <h2>Ingleburn RSL Cricket Club</h2>
-    </a>
-  </div>
-  <ul>
-    <li><a href="Registration.html">Registration</a></li>
-    <li><a href="Fixture_Results.html">Fixture/Results</a></li>
-    <li><a href="About_Us.html">About Us</a></li>
-    <li><a href="Events.html">Events</a></li>
-    <li><a href="Gallery.html">Gallery</a></li>
-    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
-    <li><a href="Contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Header Section -->
-<header class="header">
-  <h1>About Us</h1>
+<header>
+    <h1>Sports Club - Upcoming Events & Notifications</h1>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-  <h2>Our Journey</h2>
+<main>
+    <!-- Upcoming Events Section -->
+    <section>
+        <h2>Upcoming Events</h2>
+        <div id="events-list">
+            <!-- Events will be dynamically inserted here -->
+        </div>
+    </section>
 
-  <!-- History Section -->
-  <div class="history">
-    <h3>A Legacy of Passion and Community</h3>
-    <p>
-      Established in the heart of Ingleburn, the Ingleburn RSL Cricket Club has been a pillar of the local community for decades. With a rich history dating back to the early 1960s, the club was founded by a group of passionate cricket enthusiasts who sought to bring together the community through the love of the game.
-    </p>
-    <p>
-      Over the years, the club has grown from a small group of players into a thriving organization that now boasts a wide array of teams, ranging from juniors to seniors. Our commitment to nurturing talent and fostering a sense of camaraderie has remained steadfast, making us one of the most respected clubs in the region.
-    </p>
+    <!-- Notifications Section -->
+    <section>
+        <h2>Latest Notifications</h2>
+        <ul id="notifications-list">
+            <!-- Notifications will be dynamically inserted here -->
+        </ul>
+    </section>
+</main>
 
-    <h3>Junior Teams</h3>
-    <p>
-      The Ingleburn RSL Cricket Club takes great pride in its junior teams, which have become the lifeblood of our organization. Our junior programs are designed to introduce young players to the game, instilling in them the core values of teamwork, discipline, and sportsmanship. With dedicated coaches and a supportive environment, our junior teams have consistently produced talented players who go on to excel at higher levels.
-    </p>
-
-    <h3>Senior Teams</h3>
-    <p>
-      Our senior teams represent the pinnacle of cricket at Ingleburn RSL Cricket Club. With a mix of seasoned veterans and up-and-coming talent, our senior teams compete in various local and regional leagues. The camaraderie and competitive spirit within our senior squads are second to none, and they have brought home numerous accolades over the years.
-    </p>
-
-    <h3>Our Future</h3>
-    <p>
-      As we look to the future, the Ingleburn RSL Cricket Club remains committed to its founding principles of community, passion, and excellence. We continue to invest in our facilities, coaching staff, and player development programs to ensure that the next generation of cricketers has the best possible platform to succeed. We invite you to join us on this journey and be a part of our proud history.
-    </p>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
+<footer>
+    <p>&copy; 2024 Sports Club</p>
 </footer>
 
+
+<script>
+    const events = [
+        {
+            title: "Champions League Final",
+            date: "2024-09-25",
+            description: "Watch the top two football teams compete for the championship.",
+            location: "National Stadium",
+        },
+        {
+            title: "Basketball Playoffs",
+            date: "2024-10-10",
+            description: "The thrilling basketball playoff between the city's top teams.",
+            location: "City Arena",
+        },
+        {
+            title: "Tennis Grand Slam",
+            date: "2024-11-05",
+            description: "An exciting day of top-tier tennis action at the grand slam event.",
+            location: "Tennis Club",
+        },
+        {
+            title: "Annual City Marathon",
+            date: "2024-09-30",
+            description: "Join or watch the annual marathon featuring runners from all over the country.",
+            location: "City Center",
+        }
+    ];
+
+    // Function to render events dynamically
+    function renderEvents() {
+        const eventsList = document.getElementById('events-list');
+        events.forEach(event => {
+            const eventItem = document.createElement('div');
+            eventItem.className = 'event-item';
+
+            eventItem.innerHTML = `
+                <h3>${event.title}</h3>
+                <p><strong>Date:</strong> ${event.date}</p>
+                <p><strong>Location:</strong> ${event.location}</p>
+                <p>${event.description}</p>
+            `;
+
+            eventsList.appendChild(eventItem);
+        });
+    }
+
+    // Function to render notifications dynamically
+    async function renderNotifications() {
+        const notificationsList = document.getElementById('notifications-list');
+
+        try {
+            const response = await fetch('notifications.json');
+            const notifications = await response.json();
+
+            notifications.forEach(notification => {
+                const notificationItem = document.createElement('li');
+                notificationItem.className = 'notification-item';
+
+                notificationItem.innerHTML = `
+                    <h4>${notification.title}</h4>
+                    <p>${notification.description}</p>
+                `;
+
+                notificationsList.appendChild(notificationItem);
+            });
+        } catch (error) {
+            console.error('Error loading notifications:', error);
+        }
+    }
+
+    // Load events and notifications when the page is ready
+    document.addEventListener('DOMContentLoaded', () => {
+        renderEvents();
+        renderNotifications();
+    });
+</script>
 </body>
 </html>
