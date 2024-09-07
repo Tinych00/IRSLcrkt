@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Notifications</title>
     <style>
-       <style>
         * {
             margin: 0;
             padding: 0;
@@ -15,16 +14,77 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #FFE01A;
             color: #333;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #2557B6;
+            padding: 10px 20px;
+            color: #fff; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo a {
+            text-decoration: none;
+            color: #ffff00;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 100px; 
+            margin-right: 15px; 
+        }
+
+        .navbar .logo a h2 {
+            color: #ffff00;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 14px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #204998;
+            border-radius: 5px;
         }
 
         header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
+            background-image: url('header-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
         }
 
         main {
@@ -39,6 +99,7 @@
             font-size: 2em;
             color: #007bff;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         /* Events Section */
@@ -93,45 +154,54 @@
             font-size: 1em;
         }
 
+        /* Table Styles */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #DDD;
+        }
+
+        tr:hover {
+            background-color: #EEEEEE;
+        }
+
+        tr:nth-child(1) {
+            background-color: #e0e0e0;
+        }
+
+        /* About Us Section */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .history h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .history p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
         footer {
-            background-color: #007bff;
+            background-color: #2557B6;
             color: white;
             text-align: center;
             padding: 15px 0;
-        }
-
-        /* Table Styles */
-        .notification-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        .notification-table th, .notification-table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-
-        .notification-table th {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .notification-table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .notification-table tr:hover {
-            background-color: #ddd;
-        }
-
-        .table-view, .list-view {
-            display: none;
-        }
-
-        .active {
-            display: block;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -146,11 +216,12 @@
     </a>
   </div>
   <ul>          
-            <li><a href="Registration.html">Registration</a></li>
-            <li><a href="Notifications.html">Notifications</a></li>
-            <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><a href="About_Us.html">About Us</a></li>
+    <li><a href="Registration.html">Registration</a></li>
+    <li><a href="Notifications.html">Notifications</a></li>
+    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+    <li><a href="About_Us.html">About Us</a></li>
+  </ul>
 </nav>
 
 <!-- Header Section -->
@@ -170,24 +241,55 @@
     <!-- Notifications Section -->
     <section id="notifications-section">
         <h2>Latest Notifications</h2>
-        <button id="toggle-view">Switch to Table View</button>
-        <ul id="notifications-list" class="list-view">
+        <ul id="notifications-list">
             <!-- Notifications will be dynamically inserted here -->
         </ul>
-        <table id="notifications-table" class="notification-table table-view">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Location</th>
-                    <th>Description</th>
-                    <th>Note</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Notifications will be dynamically inserted here -->
-            </tbody>
+    </section>
+
+    <!-- Table Section -->
+    <section id="table-section">
+        <h2>Team Schedule</h2>
+        <table>
+            <tr>
+                <th>Teams</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td>Juniors</td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td>U/10s & U/11s</td>
+                <td>12 October 2024</td>
+                <td>TBD</td>
+            </tr>
+            <tr>
+                <td>U/12s & U/13s</td>
+                <td>28 September 2024</td>
+                <td>TBD</td>
+            </tr>
+            <tr>
+                <td>U/14s & U/15s</td>
+                <td>28 September 2024</td>
+                <td>TBD</td>
+            </tr>
+            <tr>
+                <td>U/16s</td>
+                <td>13 October 2024</td>
+                <td>TBD</td>
+            </tr>
+            <tr>
+                <td>Seniors</td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td>Grades 1-10</td>
+                <td>28 September 2024</td>
+                <td>TBD</td>
+            </tr>
         </table>
     </section>
 </main>
@@ -230,8 +332,7 @@
             date: "9 September 2024",
             time: "7:30 PM",
             location: "Ingleburn RSL",
-            description: "Join the committee for a team meeting to discuss the upcoming season, club and association news and matters. All members are welcome to attend.",
-            note: ""
+            description: "Join the committee for a team meeting to discuss the upcoming season, club and association news and matters. All members are welcome to attend."
         },
         {
             title: "Club Training (Seniors)",
@@ -260,12 +361,7 @@
 
     function renderNotifications() {
         const notificationsList = document.getElementById('notifications-list');
-        const notificationsTableBody = document.querySelector('#notifications-table tbody');
-        notificationsList.innerHTML = '';
-        notificationsTableBody.innerHTML = '';
-
         notifications.forEach(notification => {
-            // List View
             const notificationItem = document.createElement('li');
             notificationItem.className = 'notification-item';
             notificationItem.innerHTML = `
@@ -274,44 +370,15 @@
                 <p><strong>Time:</strong> ${notification.time}</p>
                 <p><strong>Location:</strong> ${notification.location}</p>
                 <p>${notification.description}</p>
-                <p>${notification.note}</p>
+                <p>${notification.note || ''}</p>
             `;
             notificationsList.appendChild(notificationItem);
-
-            // Table View
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${notification.title}</td>
-                <td>${notification.date}</td>
-                <td>${notification.time}</td>
-                <td>${notification.location}</td>
-                <td>${notification.description}</td>
-                <td>${notification.note}</td>
-            `;
-            notificationsTableBody.appendChild(row);
         });
-    }
-
-    function toggleView() {
-        const listView = document.getElementById('notifications-list');
-        const tableView = document.getElementById('notifications-table');
-        const toggleButton = document.getElementById('toggle-view');
-
-        if (listView.classList.contains('active')) {
-            listView.classList.remove('active');
-            tableView.classList.add('active');
-            toggleButton.textContent = 'Switch to List View';
-        } else {
-            listView.classList.add('active');
-            tableView.classList.remove('active');
-            toggleButton.textContent = 'Switch to Table View';
-        }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
         renderEvents();
         renderNotifications();
-        document.getElementById('toggle-view').addEventListener('click', toggleView);
     });
 </script>
 
