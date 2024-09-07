@@ -1,226 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ingleburn RSL Cricket Club - Notifications</title>
- <style>
-    /* Global Styles */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #FFE01A;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notifications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .navbar {
-      background-color: #2557B6;
-      padding: 10px 20px;
-      color: #fff; 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFE01A;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-    .navbar .logo a {
-      text-decoration: none;
-      color: #ffff00;
-      display: flex;
-      align-items: center;
-    }
+        .navbar {
+            background-color: #2557B6;
+            padding: 10px 20px;
+            color: #fff; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .navbar .logo img {
-      width: 100px; 
-      margin-right: 15px; 
-    }
+        .navbar .logo a {
+            text-decoration: none;
+            color: #ffff00;
+            display: flex;
+            align-items: center;
+        }
 
-    .navbar .logo h2 {
-      color: #ffff00; /* Yellow font color for the logo text */
-      margin: 0;
-    }
+        .navbar .logo img {
+            width: 100px; 
+            margin-right: 15px; 
+        }
 
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-    }
+        .navbar .logo a h2 {
+            color: #ffff00;
+        }
 
-    .navbar ul li {
-      margin-left: 20px;
-    }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
 
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 14px 20px;
-      transition: background-color 0.3s ease;
-    }
+        .navbar ul li {
+            margin-left: 20px;
+        }
 
-    .navbar a:hover {
-      background-color: #204998;
-      border-radius: 5px;
-    }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 14px 20px;
+            transition: background-color 0.3s ease;
+        }
 
-    .header {
-      background-image: url('header-image.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
+        .navbar a:hover {
+            background-color: #204998;
+            border-radius: 5px;
+        }
 
-    .header h1 {
-      font-size: 3em;
-    }
+        header {
+            background-image: url('header-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
 
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-    }
+        header h1 {
+            font-size: 3em;
+        }
 
-    h2 {
-      color: #2557B6;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+        main {
+            padding: 20px;
+        }
 
-    .event {
-      background-color: #f9f9f9;
-      border-left: 4px solid #2557B6;
-      margin-bottom: 20px;
-      padding: 15px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+        section {
+            margin-bottom: 30px;
+        }
 
-    .event:hover {
-      background-color: #f0f0f0;
-    }
+        h2 {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
 
-    .event h3 {
-      margin: 0;
-      font-size: 1.5em;
-      color: #333;
-    }
+        /* Events Section */
+        #events-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-    .event p {
-      margin: 5px 0;
-      color: #666;
-    }
+        .event-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
 
-    .event-details {
-      display: none;
-      margin-top: 10px;
-    }
+        .event-item:hover {
+            transform: scale(1.05);
+        }
 
-    .footer {
-      background-color: #2557B6; 
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: auto;
-    }
+        .event-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      .navbar ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+        .event-item p {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
 
-      .container {
-        padding: 10px;
-      }
-    }
-  </style>
+        /* Notifications Section */
+        #notifications-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .notification-item {
+            background-color: #ffefc3;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-item h4 {
+            margin-bottom: 10px;
+            color: #d9534f;
+        }
+
+        .notification-item p {
+            font-size: 1em;
+        }
+
+        /* About Us Section */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .history h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .history p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #2557B6;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
 
 <!-- Navigation Bar -->
 <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
-      <h2>Ingleburn RSL Cricket Club</h2>
-    </a>
-  </div>
-  <ul>
-    <li><a href="Registration.html">Registration</a></li>
-    <li><a href="Notifications.html">Notifications</a></li>
-    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
-    <li><a href="Contact.html">Contact</a></li>
-    <li><a href="About_Us.html">About Us</a></li>
-  </ul>
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/crkt.png" alt="Sports Club Logo">
+            <h2>Sports Club</h2>
+        </a>
+    </div>
+    <ul>
+        <li><a href="#events-section">Events</a></li>
+        <li><a href="#notifications-section">Notifications</a></li>
+        <li><a href="#about-us-section">About Us</a></li>
+    </ul>
 </nav>
 
 <!-- Header Section -->
-<header class="header">
-  <h1>Upcoming Events</h1>
+<header>
+    <h1>Welcome to Our Sports Club</h1>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-  <h2>Join Us for These Exciting Events</h2>
+<main>
+    <!-- Upcoming Events Section -->
+    <section id="events-section">
+        <h2>Upcoming Events</h2>
+        <div id="events-list">
+            <!-- Events will be dynamically inserted here -->
+        </div>
+    </section>
 
-  <!-- Event 1 -->
-  <div class="event" onclick="toggleDetails(1)">
-    <h3>Training Day</h3>
-    <div class="event-details" id="details-1">
-      <p><strong>Date:</strong> 15 August 2024</p>
-      <p><strong>Time:</strong> 10:00 AM - 1:00 PM</p>
-      <p><strong>Location:</strong> Ingleburn Oval</p>
-      <p>Get ready for the season with our comprehensive training day. Open to all members, this is a great opportunity to hone your skills and get to know your teammates.</p>
-    </div>
-  </div>
+    <!-- Notifications Section -->
+    <section id="notifications-section">
+        <h2>Latest Notifications</h2>
+        <ul id="notifications-list">
+            <!-- Notifications will be dynamically inserted here -->
+        </ul>
+    </section>
 
-  <!-- Event 2 -->
-  <div class="event" onclick="toggleDetails(2)">
-    <h3>Team Meeting</h3>
-    <div class="event-details" id="details-2">
-      <p><strong>Date:</strong> 20 August 2024</p>
-      <p><strong>Time:</strong> 6:00 PM - 8:00 PM</p>
-      <p><strong>Location:</strong> Ingleburn RSL Clubhouse</p>
-      <p>Join us for a team meeting to discuss the upcoming season, strategies, and expectations. This is a mandatory meeting for all team members.</p>
-    </div>
-  </div>
+    <!-- About Us Section -->
+    <section id="about-us-section">
+        <h2>About Us</h2>
+        <div class="container">
+            <div class="history">
+                <h3>A Legacy of Passion and Community</h3>
+                <p>
+                    Established in the heart of the community, the Sports Club has been a pillar for decades. Founded by enthusiasts, it has grown into a thriving organization with various teams and programs.
+                </p>
+                <p>
+                    Our junior and senior teams compete at various levels, promoting talent and camaraderie. We continue to invest in our facilities and programs, ensuring the best for future generations.
+                </p>
+                <h3>Our Future</h3>
+                <p>
+                    As we move forward, our commitment remains strong in community, passion, and excellence. Join us in our journey and be part of our proud history.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
 
-  <!-- Event 3 -->
-  <div class="event" onclick="toggleDetails(3)">
-    <h3>Presentation Night</h3>
-    <div class="event-details" id="details-3">
-      <p><strong>Date:</strong> 30 August 2024</p>
-      <p><strong>Time:</strong> 7:00 PM - 10:00 PM</p>
-      <p><strong>Location:</strong> Ingleburn RSL Club</p>
-      <p>Celebrate the season's achievements at our annual presentation night. Awards, speeches, and a night of fun await all attendees. Family and friends are welcome!</p>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
+<footer>
+    <p>&copy; 2024 Sports Club. All rights reserved.</p>
 </footer>
 
-<!-- JavaScript for Event Details -->
 <script>
-  function toggleDetails(eventId) {
-    var details = document.getElementById('details-' + eventId);
-    if (details.style.display === 'block') {
-      details.style.display = 'none';
-    } else {
-      details.style.display = 'block';
+    const events = [
+        {
+            title: "Champions League Final",
+            date: "2024-09-25",
+            description: "Watch the top two football teams compete for the championship.",
+            location: "National Stadium",
+        },
+        {
+            title: "Basketball Playoffs",
+            date: "2024-10-10",
+            description: "The thrilling basketball playoff between the city's top teams.",
+            location: "City Arena",
+        },
+        {
+            title: "Tennis Grand Slam",
+            date: "2024-11-05",
+            description: "An exciting day of top-tier tennis action at the grand slam event.",
+            location: "Tennis Club",
+        },
+        {
+            title: "Annual City Marathon",
+            date: "2024-09-30",
+            description: "Join or watch the annual marathon featuring runners from all over the country.",
+            location: "City Center",
+        }
+    ];
+
+    const notifications = [
+        {
+            title: "COVID-19 Update",
+            description: "All attendees must wear face masks and maintain social distancing at all events."
+        },
+        {
+            title: "Membership Renewal",
+            description: "Club memberships for the 2025 season are now open for renewal."
+        },
+        {
+            title: "New Training Schedule",
+            description: "The updated training schedule is now available. Check the club's website for more details."
+        },
+        {
+            title: "Weather Alert",
+            description: "Due to severe weather conditions, the outdoor match on 2024-09-18 has been postponed."
+        }
+    ];
+
+    function renderEvents() {
+        const eventsList = document.getElementById('events-list');
+        events.forEach(event => {
+            const eventItem = document.createElement('div');
+            eventItem.className = 'event-item';
+            eventItem.innerHTML = `
+                <h3>${event.title}</h3>
+                <p><strong>Date:</strong> ${event.date}</p>
+                <p><strong>Location:</strong> ${event.location}</p>
+                <p>${event.description}</p>
+            `;
+            eventsList.appendChild(eventItem);
+        });
     }
-  }
+
+    function renderNotifications() {
+        const notificationsList = document.getElementById('notifications-list');
+        notifications.forEach(notification => {
+            const notificationItem = document.createElement('li');
+            notificationItem.className = 'notification-item';
+            notificationItem.innerHTML = `
+                <h4>${notification.title}</h4>
+                <p>${notification.description}</p>
+            `;
+            notificationsList.appendChild(notificationItem);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderEvents();
+        renderNotifications();
+    });
 </script>
 
 </body>
