@@ -1,206 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ingleburn RSL Cricket Club</title>
-  <style>
-    /* Global Styles */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #FFE01A;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .navbar {
-      background-color: #2557B6;
-      padding: 10px 20px;
-      color: #fff; 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .navbar .logo a {
-      text-decoration: none;
-      color: #ffff00;
-      display: flex;
-      align-items: center;
-    }
-    .navbar .logo img {
-      width: 100px; 
-      margin-right: 15px; 
-    }
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-    }
-    .navbar ul li {
-      margin-left: 20px;
-    }
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 14px 20px;
-      transition: background-color 0.3s ease;
-    }
-    .navbar a:hover {
-      background-color: #204998;
-      border-radius: 5px;
-    }
-    .header {
-      background-image: url('header-image.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-    .header h1 {
-      font-size: 3em;
-    }
-    .slideshow-container {
-      max-width: 1000px;
-      margin: 20px auto;
-      position: relative;
-      overflow: hidden;
-    }
-    .slides img {
-      width: 100%;
-      height: auto;
-      max-height: 500px;
-      object-fit: cover;
-      display: none;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-    }
-    .tab-links {
-      display: flex;
-      justify-content: space-around;
-      border-bottom: 2px solid #e0e0e0;
-      margin-bottom: 20px;
-    }
-    .tab-links button {
-      background: none;
-      border: none;
-      color: #000;
-      padding: 10px 20px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .tab-links button.active {
-      background-color: #e0e0e0;
-      border-radius: 5px;
-    }
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
-    }
-    .tab-content img {
-      width: 80%; /* Adjusted width to 80% */
-      display: block;
-      margin: 20px auto; /* Center the image */
-    }
-    .footer {
-      background-color: #2557B6; 
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sports Club - Upcoming Events & Notifications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        /* Events Section */
+        #events-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .event-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .event-item:hover {
+            transform: scale(1.05);
+        }
+
+        .event-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .event-item p {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        /* Notifications Section */
+        #notifications-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .notification-item {
+            background-color: #ffefc3;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-item h4 {
+            margin-bottom: 10px;
+            color: #d9534f;
+        }
+
+        .notification-item p {
+            font-size: 1em;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
-      <h2>Ingleburn RSL Cricket Club</h2>
-    </a>
-  </div>
-  <ul>          
-            <li><a href="Registration.html">Registration</a></li>
-            <li><a href="Fixture_Results.html">Fixture/Results</a></li>
-            <li><a href="About_Us.html">About Us</a></li>
-            <li><a href="Events.html">Events</a></li>
-            <li><a href="Gallery.html">Gallery</a></li>
-            <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-</nav>
-
-<!-- Header Section -->
-<header class="header">
-  <h1>Club Registration</h1>
+<header>
+    <h1>Sports Club - Upcoming Events & Notifications</h1>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-  <div class="tab-links">
-    <button class="tab-link active" onclick="openTab(event, 'Juniors')">Juniors</button>
-    <button class="tab-link" onclick="openTab(event, 'Seniors')">Seniors</button>
-  </div>
+<main>
+    <!-- Upcoming Events Section -->
+    <section>
+        <h2>Upcoming Events</h2>
+        <div id="events-list">
+            <!-- Events will be dynamically inserted here -->
+        </div>
+    </section>
 
-  <!-- Juniors Tab Content -->
-  <div id="Juniors" class="tab-content active">
-    <h2>Junior Team Registration</h2>
-    <p>Ready to join the Ingleburn RSL Cricket Club as a junior player from ages 9-18? Click the link below to get started!</p>
-    <p><a href="https://www.playhq.com/cricket-australia/register/151203" target="_blank">Junior Registration</a></p>
-    <img src="assets/7.jpg" style="width:80%">
-  </div>
+    <!-- Notifications Section -->
+    <section>
+        <h2>Latest Notifications</h2>
+        <ul id="notifications-list">
+            <!-- Notifications will be dynamically inserted here -->
+        </ul>
+    </section>
+</main>
 
-  <!-- Seniors Tab Content -->
-  <div id="Seniors" class="tab-content">
-    <h2>Senior Team Registration</h2>
-    <p>Ready to join the Ingleburn RSL Cricket Club as a senior player from ages 18+? Click the link below to get started!</p>
-    <p><a href="https://www.playhq.com/cricket-australia/register/3250d2" target="_blank">Senior Registration</a></p>
-    <img src="assets/15.jpg" style="width:80%">
-  </div>
-</div>
-
-<!-- Tab Navigation Script -->
-<script>
-function openTab(evt, tabName) {
-  // Hide all tabs
-  let i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.remove("active");
-  }
-
-  // Show the selected tab
-  document.getElementById(tabName).classList.add("active");
-
-  // Remove the active class from all tab links
-  tablinks = document.getElementsByClassName("tab-link");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active");
-  }
-
-  // Add the active class to the clicked tab link
-  evt.currentTarget.classList.add("active");
-}
-</script>
-
-<!-- Footer Section -->
-<footer class="footer">
-  <p>&copy; 2024 Ingleburn RSL Cricket Club. All Rights Reserved.</p>
+<footer>
+    <p>&copy; 2024 Sports Club</p>
 </footer>
+
+<script>
+    const events = [
+        {
+            title: "Champions League Final",
+            date: "2024-09-25",
+            description: "Watch the top two football teams compete for the championship.",
+            location: "National Stadium",
+        },
+        {
+            title: "Basketball Playoffs",
+            date: "2024-10-10",
+            description: "The thrilling basketball playoff between the city's top teams.",
+            location: "City Arena",
+        },
+        {
+            title: "Tennis Grand Slam",
+            date: "2024-11-05",
+            description: "An exciting day of top-tier tennis action at the grand slam event.",
+            location: "Tennis Club",
+        },
+        {
+            title: "Annual City Marathon",
+            date: "2024-09-30",
+            description: "Join or watch the annual marathon featuring runners from all over the country.",
+            location: "City Center",
+        }
+    ];
+
+    const notifications = [
+        {
+            title: "COVID-19 Update",
+            description: "All attendees must wear face masks and maintain social distancing at all events."
+        },
+        {
+            title: "Membership Renewal",
+            description: "Club memberships for the 2025 season are now open for renewal."
+        },
+        {
+            title: "New Training Schedule",
+            description: "The updated training schedule is now available. Check the club's website for more details."
+        },
+        {
+            title: "Weather Alert",
+            description: "Due to severe weather conditions, the outdoor match on 2024-09-18 has been postponed."
+        }
+    ];
+
+    // Function to render events dynamically
+    function renderEvents() {
+        const eventsList = document.getElementById('events-list');
+        events.forEach(event => {
+            const eventItem = document.createElement('div');
+            eventItem.className = 'event-item';
+
+            eventItem.innerHTML = `
+                <h3>${event.title}</h3>
+                <p><strong>Date:</strong> ${event.date}</p>
+                <p><strong>Location:</strong> ${event.location}</p>
+                <p>${event.description}</p>
+            `;
+
+            eventsList.appendChild(eventItem);
+        });
+    }
+
+    // Function to render notifications dynamically
+    function renderNotifications() {
+        const notificationsList = document.getElementById('notifications-list');
+        notifications.forEach(notification => {
+            const notificationItem = document.createElement('li');
+            notificationItem.className = 'notification-item';
+
+            notificationItem.innerHTML = `
+                <h4>${notification.title}</h4>
+                <p>${notification.description}</p>
+            `;
+
+            notificationsList.appendChild(notificationItem);
+        });
+    }
+
+    // Load events and notifications when the page is ready
+    document.addEventListener('DOMContentLoaded', () => {
+        renderEvents();
+        renderNotifications();
+    });
+</script>
 
 </body>
 </html>
