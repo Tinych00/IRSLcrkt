@@ -260,6 +260,16 @@
     ];
 
     const notifications = [
+/* 
+        {
+            title: " ",
+            date: " ",
+            time: " ",
+            location: " ",
+            description: " ",
+            note: " "
+        }, 
+*/
         {
             title: "Committee Meeting",
             date: "9 September 2024",
@@ -269,8 +279,11 @@
         },
         {
             title: "Club Training (Seniors) ",
+            date: "Sundays (ongoing)",
+            time: "9:00 AM - 12:00 PM ",
+            location: "Memorial Oval, Ingleburn",
             description: "Prepare for the season at the club training day. Open to all members, this is a great opportunity to hone your skills and get to know your teammates.", 
-            Note: "Junior team coaches will arrange training sessions directly with teams"
+            note: "Junior team coaches will arrange training sessions directly with teams"
         },
         {
             title: "Season Commencement dates",
@@ -300,8 +313,9 @@
             notificationItem.className = 'notification-item';
             notificationItem.innerHTML = `
                 <h4>${notification.title}</h4>
-                <p>${notification.date}</p>  
-                <p>${notification.time}</p>
+                <p><strong>Date:</strong> ${notification.date}</p>  
+                <p><strong>Time:</strong> ${notification.time}</p>
+                <p><strong>Location:</strong> ${notification.location}</p>
                 <p>${notification.description}</p>
                 <p>${notification.note}</p>
             `;
