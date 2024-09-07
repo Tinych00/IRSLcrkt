@@ -300,7 +300,10 @@
             notificationItem.className = 'notification-item';
             notificationItem.innerHTML = `
                 <h4>${notification.title}</h4>
+                <p>${notification.date}</p>  
+                <p>${notification.time}</p>
                 <p>${notification.description}</p>
+                <p>${notification.note}</p>
             `;
             notificationsList.appendChild(notificationItem);
         });
