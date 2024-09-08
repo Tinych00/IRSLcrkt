@@ -76,10 +76,10 @@
             font-size: 3em;
         }
 
-        /* Scalable Contacts Grid */
+        /* Contact Cards Grid */
         .contacts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive scaling */
+            grid-template-columns: repeat(3, 1fr); /* 3 columns for full screens */
             gap: 20px;
             width: 90%;
             max-width: 1200px;
@@ -129,14 +129,14 @@
             background-color: #0056b3;
         }
 
-        /* Media Queries for further control */
-        @media (max-width: 768px) {
+        /* Responsive Design */
+        @media (max-width: 1024px) {
             .contacts-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
             .contacts-grid {
                 grid-template-columns: 1fr; /* 1 column on small screens */
             }
