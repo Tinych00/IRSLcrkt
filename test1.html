@@ -102,6 +102,7 @@
             text-align: center;
         }
 
+        /* Notifications Section */
         #notifications-list {
             list-style-type: none;
             padding: 0;
@@ -125,9 +126,17 @@
         }
 
         /* Table Styles */
+        .table-container {
+            background-color: black;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
         table {
             border-collapse: collapse;
             width: 100%;
+            background-color: #fff;
         }
 
         th, td {
@@ -178,15 +187,9 @@
 </header>
 
 <main>
-    <!-- Notifications Section -->
-    <section id="notifications-section">
-        <h2>Latest Notifications</h2>
-        <ul id="notifications-list">
-            <!-- Notifications will be dynamically inserted here -->
-        </ul>
-
-        <!-- Season Commencement Dates Table -->
-        <h2>Season Commencement Dates</h2>
+    <!-- Season Commencement Dates Table -->
+    <div class="table-container">
+        <h2 style="color: white; text-align: center;">Season Commencement Dates</h2>
         <table id="commencement-dates">
             <tr>
                 <th>Teams</th>
@@ -229,6 +232,14 @@
                 <th>TBD</th>
             </tr>
         </table>
+    </div>
+
+    <!-- Notifications Section -->
+    <section id="notifications-section">
+        <h2>Latest Notifications</h2>
+        <ul id="notifications-list">
+            <!-- Notifications will be dynamically inserted here -->
+        </ul>
     </section>
 </main>
 
