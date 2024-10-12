@@ -43,7 +43,7 @@
     }
     .navbar ul li {
       margin-left: 10px;
-      position: relative;
+      position: relative; /* Necessary for dropdown positioning */
     }
     .navbar a {
       color: #fff;
@@ -57,24 +57,11 @@
       border-radius: 5px;
     }
 
-    /* Hamburger Menu */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #fff;
-      margin: 4px 0;
-    }
-
     /* Dropdown Menu */
     .navbar ul li ul {
       display: none;
       position: absolute;
-      top: 100%;
+      top: 100%; /* Positions dropdown below the nav item */
       left: 0;
       background-color: #2557B6;
       padding: 10px;
@@ -92,6 +79,19 @@
       background-color: #204998;
       padding: 10px;
       border-radius: 5px;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
     }
 
     /* Hide menu on smaller screens */
@@ -112,6 +112,9 @@
       .navbar ul li {
         margin: 0;
         padding: 10px;
+      }
+      .hamburger {
+        display: flex;
       }
       .navbar ul li ul {
         position: static;
