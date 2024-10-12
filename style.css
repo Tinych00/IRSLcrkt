@@ -1,224 +1,223 @@
-/* General Resets */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body Styles */
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #FFE01A;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #FFE01A; /* Yellow background for the page */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height to allow sticky footer */
 }
 
-/* Navigation Bar Styles */
+/* Navbar Styles */
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #2557B6;
-  padding: 10px 20px;
-  color: #fff;
-}
-
-.navbar .logo {
-  display: flex;
-  align-items: center;
+    background-color: #2557B6; /* Blue background for navbar */
+    padding: 10px 20px;
+    color: #fff; /* White text */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar .logo a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: #ffff00; /* Yellow text for logo */
+    display: flex;
+    align-items: center;
 }
 
 .navbar .logo img {
-  width: 50px;
-  margin-right: 10px;
-}
-
-.navbar .logo h2 {
-  margin: 0;
+    width: 100px;
+    margin-right: 15px;
 }
 
 .navbar ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
+    list-style: none; /* Remove bullet points */
+    display: flex;
+    margin: 0;
 }
 
 .navbar ul li {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
-.navbar a,
-.nav-link,
-.footer a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 14px 20px;
-  text-align: center;
-  display: block;
-  transition: color 0.3s ease, background-color 0.3s ease;
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 20px;
+    transition: background-color 0.3s ease;
 }
 
-.navbar a:hover,
-.nav-link:hover,
-.footer a:hover {
-  color: #ffeb3b;
-  background-color: #2557B6;
-  border-radius: 5px;
-}
-
-/* Footer Styles */
-.footer {
-  background-color: #2557B6;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: auto; /* Ensures footer stays at the bottom */
-}
-
-/* Slideshow Styles */
-.slideshow-container {
-  position: relative;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.slides {
-  display: none;
-  width: 100%;
-}
-
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.dots-container {
-  text-align: center;
-  padding: 20px;
-  background: #333;
-}
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-  background-color: #2557B6;
+.navbar a:hover {
+    background-color: #204998; /* Darker blue on hover */
+    border-radius: 5px;
 }
 
 /* Header Styles */
 .header {
-  background-image: url('header-image.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  text-align: center;
+    background-image: url('header-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Height of header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for text */
 }
 
 .header h1 {
-  font-size: 3em;
+    font-size: 3em; /* Large header text */
 }
 
 /* Container Styles */
 .container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White container background */
 }
 
-/* Tab Links Styles */
+/* Tabs and Content */
 .tab-links {
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 2px solid #e0e0e0;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 20px;
 }
 
-.tab-links a {
-  text-decoration: none;
-  color: #000;
-  padding: 10px 20px;
-  font-weight: bold;
+.tab-links button {
+    background: none;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.tab-links a:hover {
-  background-color: #e0e0e0;
-  border-radius: 5px;
+.tab-links button.active {
+    background-color: #2557B6; /* Active tab button color */
+    color: #fff;
+    border-radius: 5px;
 }
 
-/* Club Info Styles */
-.club-info h2 {
-  color: #2557B6;
-  margin-bottom: 15px;
+.tab-content {
+    display: none;
 }
 
-.club-info p,
-.contact-info p {
-  line-height: 1.6;
-  margin: 5px 0;
+.tab-content.active {
+    display: block;
 }
 
-/* Media Queries */
+/* Slideshow Container */
+.slideshow-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover; /* Fit image to container */
+    display: none;
+}
+
+/* Contact Cards */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.contact-card {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.contact-card p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.contact-card a {
+    color: #2557B6;
+    text-decoration: none;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background-color: #2557B6;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #EEEEEE;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #2557B6; /* Footer background */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contacts-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
 @media (max-width: 768px) {
-  .navbar ul li {
-    margin-left: 10px;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-item {
-    margin: 0.5rem 0;
-  }
-
-  .header h1 {
-    font-size: 2em;
-  }
+    .contacts-grid {
+        grid-template-columns: 1fr; /* 1 column for small screens */
+    }
 }
