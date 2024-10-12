@@ -36,13 +36,14 @@
     }
     .navbar ul {
       list-style: none;
-      display: flex;
-      flex-direction: row;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: row;
     }
     .navbar ul li {
       margin-left: 10px;
+      position: relative; /* Necessary for dropdown positioning */
     }
     .navbar a {
       color: #fff;
@@ -68,11 +69,31 @@
       margin: 4px 0;
     }
 
-    /* Hide menu on smaller screens */
-    .navbar ul {
+    /* Dropdown Menu */
+    .navbar ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #2557B6;
+      padding: 10px;
+      flex-direction: column;
+      width: 150px;
+      z-index: 1000;
+    }
+    .navbar ul li:hover ul {
       display: flex;
     }
+    .navbar ul li ul li {
+      padding: 10px 0;
+    }
+    .navbar ul li ul a {
+      background-color: #204998;
+      padding: 10px;
+      border-radius: 5px;
+    }
 
+    /* Hide menu on smaller screens */
     @media (max-width: 768px) {
       .navbar ul {
         display: none;
@@ -84,6 +105,9 @@
         width: 100%;
         text-align: center;
       }
+      .navbar ul.active {
+        display: flex;
+      }
       .navbar ul li {
         margin: 0;
         padding: 10px;
@@ -91,11 +115,9 @@
       .hamburger {
         display: flex;
       }
-    }
-
-    /* Show menu when active */
-    .navbar ul.active {
-      display: flex;
+      .navbar ul li ul {
+        position: static;
+      }
     }
 
     .header {
@@ -162,7 +184,12 @@
 
   <ul id="nav-links">
     <li><a href="Registration.html">Registration</a></li>
-    <li><a href="Notifications.html">Notifications</a></li>
+    <li><a href="Notifications.html">Notifications</a>
+      <ul>
+        <li><a href="#news">News</a></li>
+        <li><a href="#updates">Updates</a></li>
+      </ul>
+    </li>
     <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
     <li><a href="Contact.html">Contact</a></li>
     <li><a href="About_Us.html">About Us</a></li>
