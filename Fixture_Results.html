@@ -158,37 +158,19 @@
 
   <!-- Fixtures Tab Content -->
   <div id="Fixtures" class="tab-content active">
-    <h2>Upcoming Fixtures</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Team A</th>
-          <th>Team B</th>
-          <th>Venue</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>12 Aug 2024</td>
-          <td>Ingleburn RSL CC</td>
-          <td>Campbelltown CC</td>
-          <td>Ingleburn Oval</td>
-        </tr>
-        <tr>
-          <td>19 Aug 2024</td>
-          <td>Ingleburn RSL CC</td>
-          <td>Macquarie Fields CC</td>
-          <td>Macquarie Fields Park</td>
-        </tr>
-        <tr>
-          <td>26 Aug 2024</td>
-          <td>Ingleburn RSL CC</td>
-          <td>Camden CC</td>
-          <td>Camden Oval</td>
-        </tr>
-      </tbody>
-    </table>
+   <div class="tab-links">
+    <button class="tab-link active" onclick="openTab(event, 'Juniors')">Juniors</button>
+      <div id="Juniors" class="tab-content active">
+
+    <button class="tab-link" onclick="openTab(event, 'Seniors')">Seniors</button>
+      <div id="Seniors" class="tab-content active">
+
+    <button class="tab-link" onclick="openTab(event, 'Masters')">Masters</button>
+      <div id="Masters" class="tab-content active">
+  </div>
+  </div>
+  </div>
+  </div>
   </div>
 
   <!-- Results Tab Content -->
