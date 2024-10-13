@@ -84,6 +84,291 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            margin-left: auto; /* Aligns hamburger to the right */
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .navbar a {
+                display: inline-block; /* Keep Home link visible */
+            }
+
+            .navbar-links {
+                display: none; /* Hide other links initially */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #2557B6;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar.responsive .navbar-links {
+                display: flex; /* Show links when menu is active */
+            }
+
+            .navbar ul li {
+                margin: 0;
+                padding: 10px;
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger icon */
+            }
+
+            .navbar ul li ul {
+                position: static; /* Stack dropdown links in mobile */
+                display: block; /* Show dropdown in mobile */
+            }
+        }
+
+        /* Header and slideshow styles */
+        .header {
+            background-image: url('header-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 10px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+        }
+
+        .slideshow-container {
+            max-width: 100%;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: none;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #2557B6; 
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar" id="navbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo" style="width: 80px; margin-right: 10px;">
+            <h2 style="color: #ffff00; display: inline;">Ingleburn RSL Cricket Club</h2>
+        </a>
+    </div>
+
+    <div class="navbar-links">
+        <a href="index.html">Home</a> <!-- Keep Home link visible -->
+        <a href="Registration.html">Registration</a>
+        <a href="Notifications.html">Notifications</a>
+        <div class="dropdown">
+            <button class="dropbtn">Socials</button>
+            <div class="dropdown-content">
+                <a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Facebook</a>
+                <a href="#link2">Link 2</a>
+                <a href="#link3">Link 3</a>
+            </div>
+        </div>
+        <a href="Contact.html">Contact</a>
+        <a href="About_Us.html">About Us</a>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleNavbar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</nav>
+
+<!-- Header Section -->
+<header class="header">
+    <h1>Welcome to Ingleburn RSL Cricket Club</h1>
+</header>
+
+<!-- Slideshow -->
+<div class="slideshow-container">
+    <div class="slides">
+        <img src="assets/1.jpg" style="display: block;">
+        <img src="assets/9.jpg">
+        <img src="assets/14.jpg">
+        <img src="assets/7.jpg">
+        <img src="assets/10.jpg">
+    </div>
+</div>
+
+<!-- Slideshow Script -->
+<script>
+    let slideIndex = 0;
+    function showSlides() {
+        let slides = document.querySelectorAll(".slides img");
+        slides.forEach((slide) => slide.style.display = "none");
+        slideIndex++;
+        if (slideIndex > slides.length) slideIndex = 1;
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+    showSlides();
+
+    /* Toggle function for showing/hiding navbar links on small screens */
+    function toggleNavbar() {
+        const navbar = document.getElementById("navbar");
+        navbar.classList.toggle("responsive");
+    }
+</script>
+
+<!-- Contact Information Section -->
+<div class="container">
+    <div class="contact-info">
+        <div class="contact-card">
+            <h3>Gerrard Riley</h3>
+            <p><strong>President</strong></p>
+            <p>📞 0491 570 006</p>
+            <p>✉️ <a href="mailto:President@example.com">President@example.com</a></p>
+        </div>
+        <div class="contact-card">
+            <h3>Brett Watts</h3>
+            <p><strong>Secretary</strong></p>
+            <p>📞 0491 570 006</p>
+            <p>✉️ <a href="mailto:Secretary@example.com">Secretary@example.com</a></p>
+        </div>
+        <div class="contact-card">
+            <h3>Paul Norton</h3>
+            <p><strong>Treasurer</strong></p>
+            <p>📞 0491 570 006</p>
+            <p>✉️ <a href="mailto:Treasurer@example.com">Treasurer@example.com</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ingleburn RSL Cricket Club | Community Cricket in Ingleburn</title>
+    <meta name="description" content="Welcome to Ingleburn RSL Cricket Club, where community spirit and cricket come together. Join us for registration, news, and match updates.">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFE01A;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2557B6;
+            padding: 10px 20px;
+            color: #fff; 
+            position: relative;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #204998;
+            border-radius: 5px;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            background-color: #2557B6;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; /* Positions dropdown below the nav item */
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            min-width: 160px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show dropdown on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
         }
 
         .hamburger div {
