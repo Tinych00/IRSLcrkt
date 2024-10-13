@@ -2,47 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ingleburn RSL Cricket Club | Community Cricket in Ingleburn</title>
     <meta name="description" content="Welcome to Ingleburn RSL Cricket Club, where community spirit and cricket come together. Join us for registration, news, and match updates.">
     <style>
         /* Global Styles */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #FFE01A;
+            margin: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* Navbar Styles */
+        /* Navbar styles */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #2557B6;
             padding: 10px 20px;
+            color: #fff; 
             position: relative;
-        }
-
-        .navbar .logo a {
-            text-decoration: none;
-            color: #ffff00;
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar .logo img {
-            width: 80px;
-            margin-right: 10px; 
         }
 
         .navbar a {
             color: #fff;
             text-decoration: none;
-            padding: 10px 15px;
+            padding: 10px;
             transition: background-color 0.3s ease;
         }
 
@@ -51,54 +39,64 @@
             border-radius: 5px;
         }
 
-        /* Dropdown Menu */
+        /* Dropdown styles */
         .dropdown {
             position: relative;
+        }
+
+        .dropbtn {
+            background-color: #2557B6;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #2557B6;
+            top: 100%; /* Positions dropdown below the nav item */
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
             min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
         }
 
         .dropdown-content a {
             color: black;
-            padding: 12px 16px;
+            padding: 10px;
             text-decoration: none;
             display: block;
         }
 
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show dropdown on hover */
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
-        /* Hamburger Menu */
+        /* Hamburger menu */
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            font-size: 28px;
-            color: white;
         }
 
-        /* Mobile Styles */
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+        }
+
+        /* Mobile styles */
         @media (max-width: 768px) {
             .navbar a {
-                display: none;
-            }
-
-            .navbar.responsive .navbar-links {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                background-color: #2557B6;
-                position: absolute;
-                top: 50px;
-                left: 0;
+                display: none; /* Hide links initially */
             }
 
             .navbar.responsive .navbar-links a {
@@ -107,20 +105,27 @@
                 text-align: left;
             }
 
-            .navbar.responsive .dropdown-content {
-                position: static;
-            }
-
-            .navbar.responsive .dropdown:hover .dropdown-content {
-                display: block;
-                position: relative;
+            .navbar.responsive .navbar-links {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2557B6;
+                position: absolute;
+                top: 50px; /* Adjust based on navbar height */
+                left: 0;
             }
 
             .hamburger {
                 display: flex;
             }
+
+            .navbar.responsive .dropdown-content {
+                position: static; /* Stack dropdown links in mobile */
+                display: block; /* Show dropdown in mobile */
+            }
         }
 
+        /* Header and slideshow styles */
         .header {
             background-image: url('header-image.jpg');
             background-size: cover;
@@ -161,6 +166,7 @@
             box-sizing: border-box;
         }
 
+        /* Footer styles */
         .footer {
             background-color: #2557B6; 
             color: #fff;
@@ -176,17 +182,21 @@
 <nav class="navbar" id="navbar">
     <div class="logo">
         <a href="index.html">
-            <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
-            <h2>Ingleburn RSL Cricket Club</h2>
+            <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo" style="width: 80px; margin-right: 10px;">
+            <h2 style="color: #ffff00; display: inline;">Ingleburn RSL Cricket Club</h2>
         </a>
     </div>
-
-    <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
+    
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleNavbar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 
     <div class="navbar-links">
         <a href="Registration.html">Registration</a>
         <a href="Notifications.html">Notifications</a>
-        <a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a>
         <a href="Contact.html">Contact</a>
         <a href="About_Us.html">About Us</a>
     </div>
@@ -200,32 +210,32 @@
 <!-- Slideshow -->
 <div class="slideshow-container">
     <div class="slides">
-        <img src="assets/1.jpg" style="width:100%">
-        <img src="assets/9.jpg" style="width:100%">
-        <img src="assets/14.jpg" style="width:100%">
-        <img src="assets/7.jpg" style="width:100%">
-        <img src="assets/10.jpg" style="width:100%">
+        <img src="assets/1.jpg" style="display: block;">
+        <img src="assets/9.jpg">
+        <img src="assets/14.jpg">
+        <img src="assets/7.jpg">
+        <img src="assets/10.jpg">
     </div>
 </div>
 
 <!-- Slideshow Script -->
 <script>
-let slideIndex = 0;
-function showSlides() {
-    let slides = document.querySelectorAll(".slides img");
-    slides.forEach((slide) => slide.style.display = "none");
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000); // Change image every 4 seconds
-}
-showSlides();
+    let slideIndex = 0;
+    function showSlides() {
+        let slides = document.querySelectorAll(".slides img");
+        slides.forEach((slide) => slide.style.display = "none");
+        slideIndex++;
+        if (slideIndex > slides.length) slideIndex = 1;
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+    showSlides();
 
-/* Toggle function for showing/hiding navbar links on small screens */
-function toggleNavbar() {
-    var navbar = document.getElementById("navbar");
-    navbar.classList.toggle("responsive");
-}
+    /* Toggle function for showing/hiding navbar links on small screens */
+    function toggleNavbar() {
+        const navbar = document.getElementById("navbar");
+        navbar.classList.toggle("responsive");
+    }
 </script>
 
 <!-- Contact Information Section -->
