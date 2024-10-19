@@ -6,145 +6,125 @@
     <title>Ingleburn RSL Cricket Club | Community Cricket in Ingleburn</title>
     <meta name="description" content="Welcome to Ingleburn RSL Cricket Club, where community spirit and cricket come together. Join us for registration, news, and match updates.">
     <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #FFE01A;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+      /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFE01A;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-        /* Navbar styles */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #2557B6;
-            padding: 10px 20px;
-            color: #fff; 
-            position: relative;
-        }
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2557B6; /* Unified background color */
+    padding: 10px 20px;
+    color: #fff; 
+    position: relative;
+}
 
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px;
-            transition: background-color 0.3s ease;
-        }
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 
-        .navbar a:hover {
-            background-color: #204998;
-            border-radius: 5px;
-        }
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
 
-        /* Hamburger and Menu styles */
-        .menu-container {
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
+.navbar-logo .logo {
+    width: 50px;
+    margin-right: 10px;
+}
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            margin-right: 10px;
-        }
+.navbar-logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700; /* Yellow text */
+}
 
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: #fff;
-            margin: 4px 0;
-        }
+/* Navbar Menu */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 
-        .menu-text {
-            color: white;
-            font-size: 18px;
-            display: inline-block;
-        }
+.navbar-menu li {
+    margin-left: 20px;
+}
 
-        /* Mobile styles */
-        @media (max-width: 768px) {
-            .navbar a {
-                display: none; /* Hide links initially */
-            }
+.navbar-menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
 
-            .navbar.responsive .navbar-links a {
-                display: block;
-                padding: 10px;
-                text-align: left;
-            }
+.navbar-menu li a:hover {
+    background-color: #204998; /* Background color change on hover */
+    border-radius: 5px;
+}
 
-            .navbar.responsive .navbar-links {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                background-color: #2557B6;
-                position: absolute;
-                top: 50px; /* Adjust based on navbar height */
-                left: 0;
-            }
+/* Hamburger and Menu Styles for Mobile */
+.menu-container {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
 
-            .menu-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0 auto;
-            }
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 10px;
+}
 
-            .hamburger {
-                display: flex;
-            }
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
 
-            .navbar.responsive .dropdown-content {
-                position: static; /* Stack dropdown links in mobile */
-                display: block; /* Show dropdown in mobile */
-            }
-        }
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hide links initially */
+    }
 
-        /* Header and slideshow styles */
-        .header {
-            background-image: url('header-image.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            text-align: center;
-            padding: 10px;
-        }
+    .navbar.responsive .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #2557B6;
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
 
-        .header h1 {
-            font-size: 2.5em;
-        }
+    .menu-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
 
-        .slideshow-container {
-            max-width: 100%;
-            margin: 20px auto;
-            position: relative;
-            overflow: hidden;
-        }
+    .hamburger {
+        display: flex;
+    }
+}
 
-        .slides img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            display: none;
-        }
-
-        .container {
-            max-width: 100%;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #fff;
-            box-sizing: border-box;
-        }
 /* Contact Information Section */
 .contact-info {
     display: flex;
@@ -157,14 +137,14 @@
 
 .contact-card {
     text-align: center;
-    width: 250px; /* Set a width for the cards */
+    width: 250px;
     margin: 10px;
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-/* Contact Information Section */
+
 .contact-card h3 {
     margin-bottom: 5px;
     font-size: 1.2em;
@@ -183,15 +163,57 @@
     text-decoration: underline;
 }
 
+/* Header and Slideshow */
+.header {
+    background-image: url('header-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 10px;
+}
 
-        /* Footer styles */
-        .footer {
-            background-color: #2557B6; 
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: auto;
-        }
+.header h1 {
+    font-size: 2.5em;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: none;
+}
+
+/* Container */
+.container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #2557B6; 
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
     </style>
 </head>
 <body>
