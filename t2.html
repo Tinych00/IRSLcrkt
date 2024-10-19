@@ -39,51 +39,18 @@
             border-radius: 5px;
         }
 
-        /* Dropdown styles */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropbtn {
-            background-color: #2557B6;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .dropdown-content {
+        /* Hamburger and Menu styles */
+        .menu-container {
             display: none;
-            position: absolute;
-            top: 100%; /* Positions dropdown below the nav item */
-            left: 0;
-            background-color: #fff;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            min-width: 160px;
+            align-items: center;
+            justify-content: center;
         }
 
-        .dropdown-content a {
-            color: black;
-            padding: 10px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        /* Show dropdown on hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Hamburger menu */
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
+            margin-right: 10px;
         }
 
         .hamburger div {
@@ -91,6 +58,12 @@
             height: 3px;
             background-color: #fff;
             margin: 4px 0;
+        }
+
+        .menu-text {
+            color: white;
+            font-size: 18px;
+            display: inline-block;
         }
 
         /* Mobile styles */
@@ -113,6 +86,13 @@
                 position: absolute;
                 top: 50px; /* Adjust based on navbar height */
                 left: 0;
+            }
+
+            .menu-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
             }
 
             .hamburger {
@@ -186,12 +166,15 @@
             <h2 style="color: #ffff00; display: inline;">Ingleburn RSL Cricket Club</h2>
         </a>
     </div>
-    
-    <!-- Hamburger Icon -->
-    <div class="hamburger" onclick="toggleNavbar()">
-        <div></div>
-        <div></div>
-        <div></div>
+
+    <!-- Hamburger Icon and Menu Text -->
+    <div class="menu-container" onclick="toggleNavbar()">
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <span class="menu-text">Menu</span>
     </div>
 
     <div class="navbar-links">
