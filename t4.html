@@ -8,7 +8,7 @@
     <meta name="description"
         content="Welcome to Ingleburn RSL Cricket Club, where community spirit and cricket come together. Join us for registration, news, and match updates.">
     <style>
-   /* Global Styles */
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #FFE01A;
@@ -26,6 +26,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .navbar .logo a {
@@ -64,17 +65,13 @@
         }
 
         /* Hamburger and Menu styles */
-        .menu-container {
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
-
         .hamburger {
-            display: none;
+            display: flex;
             flex-direction: column;
             cursor: pointer;
-            margin-right: 10px;
+            position: absolute;
+            right: 20px;
+            top: 15px;
         }
 
         .hamburger div {
@@ -87,7 +84,7 @@
         .menu-text {
             color: white;
             font-size: 18px;
-            display: inline-block;
+            display: none;
         }
 
         /* Mobile styles */
@@ -112,20 +109,12 @@
                 left: 0;
             }
 
-            .menu-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0 auto;
-            }
-
             .hamburger {
                 display: flex;
             }
 
-            .navbar.responsive .dropdown-content {
-                position: static;
-                display: block;
+            .navbar.responsive .hamburger {
+                display: flex;
             }
         }
 
@@ -230,14 +219,11 @@
             </a>
         </div>
 
-        <!-- Hamburger Icon and Menu Text -->
-        <div class="menu-container" onclick="toggleNavbar()">
-            <div class="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <span class="menu-text">Menu</span>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleNavbar()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
 
         <div class="navbar-links">
