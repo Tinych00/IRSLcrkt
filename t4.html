@@ -3,63 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navbar with Flexbox</title>
+    <title>Combined Navbar Example</title>
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Base styles for the body and navbar */
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
         }
 
-        /* Navbar Styling */
         .navbar {
+            background-color: #2557B6;
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #2557B6;
             padding: 10px 20px;
+            position: relative;
         }
 
-        .navbar .logo img {
-            width: 100px;
-        }
-
-        .navbar .logo h2 {
-            color: #ffff00;
-            margin-left: 10px;
-            display: inline;
-        }
-
-        /* Navbar Links Styling */
-        .navbar ul {
-            list-style: none;
+        /* Logo section */
+        .logo {
             display: flex;
             align-items: center;
         }
 
-        .navbar ul li {
-            margin-left: 20px;
+        .logo img {
+            width: 100px;
+            margin-right: 10px;
         }
 
-        .navbar ul li a {
+        .logo h2 {
+            color: #ffff00;
+            margin: 0;
+        }
+
+        /* Navbar links styling */
+        .navbar-links {
+            display: flex;
+        }
+
+        .navbar-links ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-right: 15px;
+        }
+
+        .navbar-links a {
+            color: white;
             text-decoration: none;
-            color: #fff;
             font-weight: bold;
             padding: 10px 15px;
-            transition: background-color 0.3s;
         }
 
-        .navbar ul li a:hover {
+        /* Hover effect for links */
+        .navbar-links a:hover {
             background-color: #204998;
             border-radius: 5px;
         }
 
-        /* Hamburger Menu */
+        /* Hamburger menu for small screens */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -69,46 +76,43 @@
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #fff;
-            margin: 4px;
+            background-color: white;
+            margin: 4px 0;
         }
 
-        /* Responsive Layout */
+        /* Mobile responsiveness */
         @media (max-width: 768px) {
-            .navbar ul {
+            .navbar-links {
                 display: none;
+                width: 100%;
                 flex-direction: column;
-                width: 100%;
-                background-color: #2557B6;
                 position: absolute;
-                top: 60px;
+                top: 50px;
                 left: 0;
+                background-color: #2557B6;
             }
 
-            .navbar ul li {
+            .navbar-links ul {
+                flex-direction: column;
+            }
+
+            .navbar-links li {
                 margin: 0;
-                width: 100%;
-            }
-
-            .navbar ul li a {
-                display: block;
-                text-align: left;
-                padding: 15px;
+                text-align: center;
                 border-bottom: 1px solid #204998;
             }
 
-            .navbar.responsive ul {
+            .hamburger {
                 display: flex;
             }
 
-            .hamburger {
+            .navbar.responsive .navbar-links {
                 display: flex;
             }
         }
     </style>
 </head>
 <body>
-
     <nav class="navbar">
         <!-- Logo Section -->
         <div class="logo">
@@ -118,29 +122,31 @@
             </a>
         </div>
 
+        <!-- Navbar Links -->
+        <div class="navbar-links">
+            <ul>
+                <li><a href="Registration.html">Registration</a></li>
+                <li><a href="Notifications.html">Notifications</a></li>
+                <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="About_Us.html">About Us</a></li>
+            </ul>
+        </div>
+
         <!-- Hamburger Menu for Small Screens -->
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger" onclick="toggleNavbar()">
             <div></div>
             <div></div>
             <div></div>
         </div>
-
-        <!-- Navbar Links -->
-        <ul>
-            <li><a href="Registration.html">Registration</a></li>
-            <li><a href="Notifications.html">Notifications</a></li>
-            <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><a href="About_Us.html">About Us</a></li>
-        </ul>
     </nav>
 
     <script>
-        function toggleMenu() {
+        // JavaScript function to toggle the responsive class
+        function toggleNavbar() {
             const navbar = document.querySelector('.navbar');
             navbar.classList.toggle('responsive');
         }
     </script>
-
 </body>
 </html>
