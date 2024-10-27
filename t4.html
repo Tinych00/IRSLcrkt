@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Navbar</title>
     <style>
-        /* General navbar styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,16 +12,15 @@
             background-color: #f4f4f4;
         }
 
+        /* Navbar styling */
         .navbar {
             background-color: #2557B6;
+            padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            position: relative;
         }
 
-        /* Logo and text styles */
         .logo {
             display: flex;
             align-items: center;
@@ -38,32 +36,32 @@
             margin: 0;
         }
 
-        /* Navbar links styles */
-        ul {
-            display: flex;
+        /* Navbar links styling */
+        .navbar ul {
             list-style: none;
+            display: flex;
             margin: 0;
             padding: 0;
         }
 
-        ul li {
-            margin-right: 20px;
+        .navbar li {
+            margin: 0 15px;
         }
 
-        ul li a {
-            color: #fff;
+        .navbar a {
             text-decoration: none;
+            color: white;
             font-weight: bold;
-            padding: 8px 12px;
-            transition: background-color 0.3s ease;
+            padding: 8px 15px;
+            transition: background-color 0.3s;
         }
 
-        ul li a:hover {
+        .navbar a:hover {
             background-color: #204998;
             border-radius: 5px;
         }
 
-        /* Hamburger menu for small screens */
+        /* Hamburger menu styling */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -73,29 +71,29 @@
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #fff;
-            margin: 4px;
+            background-color: white;
+            margin: 4px 0;
         }
 
-        /* Media query for small screens */
+        /* Responsive styling */
         @media (max-width: 768px) {
-            ul {
+            .navbar ul {
                 display: none;
                 flex-direction: column;
                 width: 100%;
-                position: absolute;
-                top: 50px;
-                left: 0;
                 background-color: #2557B6;
+                position: absolute;
+                top: 60px;
+                left: 0;
             }
 
-            ul.responsive {
+            .navbar.responsive ul {
                 display: flex;
             }
 
-            ul li {
-                margin: 10px 0;
+            .navbar.responsive ul li {
                 text-align: center;
+                padding: 10px 0;
             }
 
             .hamburger {
@@ -107,7 +105,6 @@
 <body>
 
     <nav class="navbar">
-        <!-- Logo -->
         <div class="logo">
             <a href="index.html">
                 <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
@@ -115,27 +112,25 @@
             </a>
         </div>
 
-        <!-- Hamburger menu for mobile view -->
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <!-- Navbar links -->
-        <ul id="navbar-links">
+        <ul>
             <li><a href="Registration.html">Registration</a></li>
             <li><a href="Notifications.html">Notifications</a></li>
             <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
             <li><a href="Contact.html">Contact</a></li>
             <li><a href="About_Us.html">About Us</a></li>
         </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </nav>
 
     <script>
         function toggleMenu() {
-            var navbarLinks = document.getElementById('navbar-links');
-            navbarLinks.classList.toggle('responsive');
+            var navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('responsive');
         }
     </script>
 
