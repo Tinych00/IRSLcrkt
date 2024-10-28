@@ -9,10 +9,10 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #FFE01A;
+  line-height: 1.6;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  line-height: 1.6;
 }
 
 /* Navigation Bar Styles */
@@ -39,13 +39,12 @@ body {
 
 .navbar .logo img {
   width: 100px;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  align-items: center;
   margin: 0;
   padding: 0;
 }
@@ -61,53 +60,31 @@ body {
   padding: 14px 20px;
   text-align: center;
   display: block;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar a:hover {
+  color: #ffeb3b;
   background-color: #204998;
   border-radius: 5px;
 }
 
 /* Slideshow Styles */
 .slideshow-container {
+  position: relative;
   max-width: 1000px;
   margin: 20px auto;
-  position: relative;
-  overflow: hidden;
+}
+
+.slides {
+  display: none;
+  width: 100%;
 }
 
 .slides img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  display: none;
-}
-
-/* Navigation Buttons for Slideshow */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .dots-container {
@@ -143,13 +120,67 @@ body {
   justify-content: center;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
 }
 
 .header h1 {
   font-size: 3em;
 }
 
-/* Container Styles */
+/* Accordion Styles */
+.accordion {
+  background-color: #2557B6;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  max-width: 900px;
+  margin: 10px auto;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-size: 18px;
+}
+
+.accordion:hover, .accordion.active {
+  background-color: #204998;
+}
+
+.accordion:after {
+  content: "\002B"; /* Plus sign */
+  float: right;
+}
+
+.accordion.active:after {
+  content: "\2212"; /* Minus sign */
+}
+
+.panel {
+  padding: 10px 18px;
+  background-color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.panel a {
+  display: block;
+  padding: 10px;
+  color: #2557B6;
+  text-decoration: none;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.panel a:hover {
+  background-color: #f0f0f0;
+}
+
+.panel a:last-child {
+  border-bottom: none;
+}
+
+/* Content Container */
 .container {
   max-width: 1200px;
   margin: 20px auto;
@@ -178,63 +209,6 @@ body {
   border-radius: 5px;
 }
 
-/* Accordion Styles */
-.accordion {
-  background-color: #2557B6;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  max-width: 900px;
-  margin: 10px auto;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-  font-size: 18px;
-}
-
-.accordion:hover,
-.accordion.active {
-  background-color: #204998;
-}
-
-.accordion:after {
-  content: "\002B";
-  float: right;
-}
-
-.accordion.active:after {
-  content: "\2212";
-}
-
-.panel {
-  padding: 10px 18px;
-  background-color: #fff;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-.panel a {
-  display: block;
-  padding: 10px;
-  color: #2557B6;
-  text-decoration: none;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.panel a:hover {
-  background-color: #f0f0f0;
-}
-
-.panel a:last-child {
-  border-bottom: none;
-}
-
 /* Footer Styles */
 .footer {
   background-color: #2557B6;
@@ -244,37 +218,22 @@ body {
   margin-top: auto;
 }
 
-.footer a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 14px 20px;
-  display: block;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.footer a:hover {
-  color: #ffeb3b;
-  background-color: #3949ab;
-  border-radius: 5px;
-}
-
-/* Media Queries */
+/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-  .navbar ul li {
-    margin-left: 10px;
-  }
-
   .navbar ul {
     flex-direction: column;
-    text-align: center;
+    align-items: center;
   }
 
-  .nav-item {
-    margin: 0.5rem 0;
+  .navbar ul li {
+    margin: 10px 0;
   }
 
   .header h1 {
     font-size: 2em;
+  }
+
+  .accordion {
+    font-size: 16px;
   }
 }
