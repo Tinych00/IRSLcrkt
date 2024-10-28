@@ -1,184 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ingleburn RSL Cricket Club website with registration, contacts, news, and match updates.">
-  <link rel="icon" href="assets/crkt.png" type="image/png">
-  <title>Ingleburn RSL Cricket Club</title>
-  <style>
-    /* Global Styles */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #FFE01A;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ingleburn RSL Cricket Club website with registration, contacts, news, and match updates.">
+    <link rel="icon" href="assets/crkt.png" type="image/png">
+    <title>Ingleburn RSL Cricket Club</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFE01A;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* Navbar Styling */
+        .navbar {
+            background-color: #2557B6;
+            padding: 10px 20px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
 
-    /* Navbar Styling */
-    .navbar {
-        background-color: #2557B6;
-        padding: 10px 20px;
-        color: #fff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
 
-    .logo {
-        display: flex;
-        align-items: center;
-    }
+        .logo img {
+            width: 50px;
+            margin-right: 15px;
+        }
 
-    .logo img {
-        width: 50px;
-        margin-right: 15px;
-    }
+        .logo h2 {
+            color: #ffff00;
+            margin: 0;
+            font-size: 1.5em;
+        }
 
-    .logo h2 {
-        color: #ffff00;
-        margin: 0;
-        font-size: 1.5em;
-    }
-
-    .navbar ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-    }
-
-    .navbar ul li {
-        margin-left: 20px;
-    }
-
-    .navbar a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 10px 15px;
-        transition: background-color 0.3s ease;
-    }
-
-    .navbar a:hover {
-        background-color: #204998;
-        border-radius: 5px;
-    }
-
-    /* Hamburger Menu Styling */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-    }
-
-    .hamburger div {
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        margin: 4px 0;
-    }
-
-    /* Responsive Styling */
-    @media (max-width: 768px) {
         .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #204998;
+            border-radius: 5px;
+        }
+
+        /* Hamburger Menu Styling */
+        .hamburger {
             display: none;
             flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2557B6;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                z-index: 1;
+            }
+
+            .navbar.responsive ul {
+                display: flex;
+            }
+
+            .navbar.responsive ul li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Header Section Styling */
+        .header {
+            background-image: url('header-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .header h1 {
+            font-size: 3em;
+        }
+
+        /* Slideshow Styling */
+        .slideshow-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides img {
             width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: none;
+        }
+
+        /* Content Section */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        /* Accordion Styling */
+        .accordion {
             background-color: #2557B6;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            z-index: 1;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            transition: 0.4s;
+            margin-top: 10px;
         }
 
-        .navbar.responsive ul {
-            display: flex;
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
         }
 
-        .navbar.responsive ul li {
+        .panel a {
+            color: #2557B6;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #2557B6;
+            color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px;
+            margin-top: auto;
         }
-
-        .hamburger {
-            display: flex;
-        }
-    }
-
-    /* Header Section Styling */
-    .header {
-        background-image: url('header-image.jpg');
-        background-size: cover;
-        background-position: center;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-
-    .header h1 {
-        font-size: 3em;
-    }
-
-    /* Slideshow Styling */
-    .slideshow-container {
-        max-width: 1000px;
-        margin: 20px auto;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .slides img {
-        width: 100%;
-        height: auto;
-        max-height: 500px;
-        object-fit: cover;
-        display: none;
-    }
-
-    /* Content Section */
-    .container {
-        max-width: 1200px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
-    }
-
-    /* Accordion Menu Styling */
-    .accordion {
-        background-color: #2557B6;
-        color: white;
-        cursor: pointer;
-        padding: 15px;
-        text-align: left;
-        font-size: 18px;
-        border: none;
-        outline: none;
-        transition: 0.4s;
-    }
-
-    .panel {
-        padding: 0 18px;
-        display: none;
-        overflow: hidden;
-        background-color: #f1f1f1;
-    }
-
-    /* Footer Styling */
-    .footer {
-        background-color: #2557B6;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-        margin-top: auto;
-    }
-  </style>
+    </style>
 </head>
 <body>
 
@@ -207,45 +216,49 @@
 
 <!-- Header Section -->
 <header class="header">
-  <h1>Welcome to Ingleburn RSL Cricket Club</h1>
+    <h1>Welcome to Ingleburn RSL Cricket Club</h1>
 </header>
 
 <!-- Accordion Menu -->
 <div class="container">
     <button class="accordion">Juniors</button>
     <div class="panel">
-        <!-- Add your Junior team links here as shown in the initial HTML -->
+        <a href="https://play.cricket.com.au/grade/e1162d4d-5e5a-46bb-90e6-c7023793dd38?teamId=6f1ff775-d361-465c-ae34-6cea407ede06&tab=matches" target="_blank">U/10s Blue</a>
+        <!-- Additional links omitted for brevity -->
     </div>
 
     <button class="accordion">Seniors</button>
     <div class="panel">
-        <!-- Add your Senior team links here as shown in the initial HTML -->
+        <a href="https://play.cricket.com.au/grade/61ffece4-abac-4ff9-ac0e-0f75772fd4f2?teamId=335e5f0a-8444-4ad8-b6b9-cb51c4256463&tab=matches" target="_blank">Grade 1</a>
+        <!-- Additional links omitted for brevity -->
     </div>
 
     <button class="accordion">Masters</button>
     <div class="panel">
-        <!-- Add your Masters team links here as shown in the initial HTML -->
+        <a href="https://play.cricket.com.au/grade/52248d35-d7b6-4ad0-93a1-0d3b7ee4b745?teamId=a6f1ed1d-c257-4ebe-a99b-37808ce7190f&tab=matches" target="_blank">Classics</a>
+        <!-- Additional links omitted for brevity -->
     </div>
 </div>
 
 <!-- Footer -->
 <footer class="footer">
-  <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
+    <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
 </footer>
 
+<!-- Scripts -->
 <script>
-  function toggleMenu() {
-    var navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('responsive');
-  }
+    function toggleMenu() {
+        var navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('responsive');
+    }
 
-  document.querySelectorAll(".accordion").forEach((accordion) => {
-    accordion.addEventListener("click", function() {
-      this.classList.toggle("active");
-      let panel = this.nextElementSibling;
-      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    document.querySelectorAll(".accordion").forEach((accordion) => {
+        accordion.addEventListener("click", function() {
+            this.classList.toggle("active");
+            let panel = this.nextElementSibling;
+            panel.style.display = panel.style.display === "block" ? "none" : "block";
+        });
     });
-  });
 </script>
 
 </body>
