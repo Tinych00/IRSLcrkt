@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ingleburn RSL Cricket Club website with registration, contacts, news, and match updates.">
+  <link rel="icon" href="assets/crkt.png" type="image/png">
+  <title>Ingleburn RSL Cricket Club</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFE01A; /* Yellow */
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    /* Navbar Styling */
+    .navbar {
+      background-color: #2557B6; /* Blue */
+      padding: 10px 20px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 50px;
+      margin-right: 15px;
+    }
+
+    .logo h2 {
+      color: #ffff00;
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      margin-left: 20px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #204998;
+      border-radius: 5px;
+    }
+
+    /* Hamburger Menu Styling */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #2557B6;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1;
+      }
+
+      .navbar.responsive ul {
+        display: flex;
+      }
+
+      .navbar.responsive ul li {
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Header Section Styling */
+    .header {
+      background-image: url('header-image.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .header h1 {
+      font-size: 3em;
+    }
+
+    /* Slideshow Styling */
+    .slideshow-container {
+      max-width: 1000px;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slides img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      display: none;
+    }
+
+    /* Content Section */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .tab-links {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    .tab-links button {
+      background: none;
+      border: none;
+      color: #000;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .tab-links button.active {
+      background-color: #e0e0e0;
+      border-radius: 5px;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content img {
+      width: 80%;
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Footer Styling */
+    .footer {
+      background-color: #2557B6; /* Blue */
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+    }
+
+    /* Grid Styling */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #DDD;
+    }
+
+    tr:hover {
+      background-color: #EEEEEE;
+    }
+
+    tr:nth-child(1) {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
+      <h2>Ingleburn RSL Cricket Club</h2>
+    </a>
+  </div>
+  <ul>
+    <li><a href="Registration.html">Registration</a></li>
+    <li><a href="Fixture_Results.html">Fixture/Results</a></li>
+    <li><a href="Notifications.html">Notifications</a></li>
+    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+    <li><a href="About_Us.html">About Us</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</nav>
+
+<!-- Header Section -->
+<header class="header">
+  <h1>Welcome to Ingleburn RSL Cricket Club</h1>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="tab-links">
+    <button class="tab-link active" onclick="openTab(event, 'Juniors')">Juniors</button>
+    <button class="tab-link" onclick="openTab(event, 'Seniors')">Seniors</button>
+  </div>
+
+  <!-- Juniors Tab Content -->
+  <div id="Juniors" class="tab-content active">
+    <h2>Junior Team Registration</h2>
+    <p>Ready to join the Ingleburn RSL Cricket Club as a junior player from ages 9-16? Click <a href="https://www.playhq.com/cricket-australia/register/151203" target="_blank">Here</a> to get started!</p>
+    <br>    
+    <img src="assets/7.jpg" alt="Junior Cricket">
+  </div>
+
+  <!-- Seniors Tab Content -->
+  <div id="Seniors" class="tab-content">
+    <h2>Senior Team Registration</h2>
+    <p>Ready to join the Ingleburn RSL Cricket Club as a senior player? Click <a href="https://www.playhq.com/cricket-australia/register/3250d2" target="_blank">Here</a> to get started!</p>
+    <br> 
+    <img src="assets/15.jpg" alt="Senior Cricket">
+  </div>
+</div>
+
+<!-- Tab Navigation Script -->
+<script>
+  function toggleMenu() {
+    var navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('responsive');
+  }
+
+  function openTab(evt, tabName) {
+    let tabcontent = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].classList.remove("active");
+    }
+
+    document.getElementById(tabName).classList.add("active");
+
+    let tablinks = document.getElementsByClassName("tab-link");
+    for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+
+    evt.currentTarget.classList.add("active");
+  }
+</script>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <p>&copy; 2024 Ingleburn RSL Cricket Club. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
