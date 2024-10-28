@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ingleburn RSL Cricket Club is a club website that brings together the community spirit and love of cricket. Registration, Contacts, News, and Match Updates for the IRSL can be found here.">
+  <meta name="description" content="Ingleburn RSL Cricket Club website with registration, contacts, news, and match updates.">
   <link rel="icon" href="assets/crkt.png" type="image/png">
   <title>Ingleburn RSL Cricket Club</title>
   <style>
-    /* Global Styles */
     body {
       font-family: Arial, sans-serif;
+      background-color: #FFE01A; /* Yellow background */
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -20,28 +18,27 @@
 
     /* Navbar Styles */
     .navbar {
-      background-color: #2557B6; /* Blue */
+      background-color: #2557B6; /* Blue background */
       padding: 10px 20px;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
     }
 
-    .logo {
+    .navbar .logo {
       display: flex;
       align-items: center;
     }
 
-    .logo img {
-      width: 100px;
+    .navbar .logo img {
+      width: 100px; /* Adjust size of the cricket ball icon */
       margin-right: 15px;
     }
 
-    .logo h2 {
-      color: #ffff00; /* Yellow */
+    .navbar .logo h2 {
+      color: #ffff00; /* Yellow text for logo */
       margin: 0;
-      font-size: 1.8em;
     }
 
     .navbar ul {
@@ -55,10 +52,10 @@
     }
 
     .navbar a {
-      text-decoration: none;
       color: white;
+      text-decoration: none;
       font-weight: bold;
-      padding: 10px 15px;
+      padding: 14px 20px;
       transition: background-color 0.3s ease;
     }
 
@@ -67,7 +64,7 @@
       border-radius: 5px;
     }
 
-    /* Hamburger menu */
+    /* Hamburger Menu */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -87,7 +84,7 @@
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #2557B6;
+        background-color: #2557B6; /* Background for dropdown */
         position: absolute;
         top: 60px;
         left: 0;
@@ -97,9 +94,9 @@
         display: flex;
       }
 
-      .navbar.responsive ul li {
+      .navbar ul li {
         text-align: center;
-        padding: 10px 0;
+        margin: 10px 0;
       }
 
       .hamburger {
@@ -107,7 +104,7 @@
       }
     }
 
-    /* Header Styles */
+    /* Header Section */
     .header {
       background-image: url('header-image.jpg');
       background-size: cover;
@@ -116,7 +113,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      color: #fff;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
@@ -124,56 +121,7 @@
       font-size: 3em;
     }
 
-    /* Slideshow Styles */
-    .slideshow-container {
-      max-width: 1000px;
-      margin: 20px auto;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .slides img {
-      width: 100%;
-      height: auto;
-      display: none;
-    }
-
-    /* Contact Information Styles */
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-    }
-
-    .contact-info {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-
-    .contact-card {
-      width: 30%;
-      text-align: center;
-    }
-
-    .contact-card h3 {
-      margin-bottom: 5px;
-      font-size: 1.2em;
-      color: #333;
-    }
-
-    .contact-card p {
-      margin: 5px 0;
-      color: #666;
-    }
-
-    .contact-card a {
-      color: #2557B6; /* Blue */
-      text-decoration: none;
-    }
-
-    /* Footer Styles */
+    /* Footer */
     .footer {
       background-color: #2557B6; /* Blue */
       color: white;
@@ -181,6 +129,7 @@
       padding: 20px;
       margin-top: auto;
     }
+
   </style>
 </head>
 <body>
@@ -188,11 +137,12 @@
 <!-- Navigation Bar -->
 <nav class="navbar">
   <div class="logo">
-    <a href="index.html">
-      <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
+    <a href="index.html" style="display: flex; align-items: center;">
+      <img src="assets/crkt.png" alt="Cricket Club Logo">
       <h2>Ingleburn RSL Cricket Club</h2>
     </a>
   </div>
+
   <ul>
     <li><a href="Registration.html">Registration</a></li>
     <li><a href="Fixture_Results.html">Fixture/Results</a></li>
@@ -201,6 +151,7 @@
     <li><a href="Contact.html">Contact</a></li>
     <li><a href="About_Us.html">About Us</a></li>
   </ul>
+
   <div class="hamburger" onclick="toggleMenu()">
     <div></div>
     <div></div>
@@ -213,71 +164,14 @@
   <h1>Welcome to Ingleburn RSL Cricket Club</h1>
 </header>
 
-<!-- Slideshow Section -->
-<div class="slideshow-container">
-  <div class="slides">
-    <img src="assets/1.jpg">
-    <img src="assets/9.jpg">
-    <img src="assets/14.jpg">
-    <img src="assets/7.jpg">
-    <img src="assets/10.jpg">
-    <img src="assets/17.jpg">
-    <img src="assets/15.jpg">
-    <img src="assets/12.jpg">
-    <img src="assets/6.jpg">
-    <img src="assets/4.jpg">
-    <img src="assets/18.jpg">
-    <img src="assets/8.jpg">
-    <img src="assets/5.jpg">
-  </div>
-</div>
-
-<!-- Slideshow Script -->
-<script>
-let slideIndex = 0;
-function showSlides() {
-  let slides = document.querySelectorAll(".slides img");
-  slides.forEach((slide) => slide.style.display = "none");
-  slideIndex++;
-  if (slideIndex > slides.length) slideIndex = 1;
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000); // Change image every 4 seconds
-}
-showSlides();
-</script>
-
-<!-- Contact Information Section -->
-<div class="container">
-  <div class="contact-info">
-    <div class="contact-card">
-      <h3>Gerrard Riley</h3>
-      <p><strong>President</strong></p>
-      <p>📞 0491 570 006</p>
-      <p>✉️ <a href="mailto:President@example.com">President@example.com</a></p>
-    </div>
-    <div class="contact-card">
-      <h3>Brett Watts</h3>
-      <p><strong>Secretary</strong></p>
-      <p>📞 0491 570 006</p>
-      <p>✉️ <a href="mailto:Secretary@example.com">Secretary@example.com</a></p>
-    </div>
-    <div class="contact-card">
-      <h3>Paul Norton</h3>
-      <p><strong>Treasurer</strong></p>
-      <p>📞 0491 570 006</p>
-      <p>✉️ <a href="mailto:Treasurer@example.com">Treasurer@example.com</a></p>
-    </div>
-  </div>
-</div>
-
-<!-- Footer Section -->
+<!-- Footer -->
 <footer class="footer">
   <p>&copy; 2024 Ingleburn RSL Cricket Club. All rights reserved.</p>
 </footer>
 
 <script>
   function toggleMenu() {
-    const navbar = document.querySelector('.navbar');
+    var navbar = document.querySelector('.navbar');
     navbar.classList.toggle('responsive');
   }
 </script>
