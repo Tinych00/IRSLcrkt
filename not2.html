@@ -103,6 +103,17 @@
         }
 
     /* Notifications Section */
+.notifications-header {
+    font-size: 2.5em; /* Larger font size */
+    color: #fff; /* White text for contrast */
+    background-color: #007bff; /* Blue background to pop out */
+    padding: 15px; /* Add padding around the text */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    margin-bottom: 20px; /* Space below the header */
+}
+
         #notifications-list {
             list-style-type: none;
             padding: 0;
@@ -189,12 +200,12 @@
 
 <main>
     <!-- Notifications Section -->
-    <section id="notifications-section">
-        <h2>Latest Notifications</h2>
-        <ul id="notifications-list">
-            <!-- Notifications will be dynamically inserted here -->
-        </ul>
-    </section>
+   <section id="notifications-section">
+    <h2 class="notifications-header">Latest Notifications</h2>
+    <ul id="notifications-list">
+        <!-- Notifications will be dynamically inserted here -->
+    </ul>
+</section>
 
     <!-- Season Commencement Dates Table -->
     <div class="table-container">
