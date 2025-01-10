@@ -102,7 +102,18 @@
             text-align: center;
         }
 
-        /* Notifications Section */
+    /* Notifications Section */
+.notifications-header {
+    font-size: 2.5em; /* Larger font size */
+    color: #fff; /* White text for contrast */
+    background-color: #007bff; /* Blue background to pop out */
+    padding: 15px; /* Add padding around the text */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    margin-bottom: 20px; /* Space below the header */
+}
+
         #notifications-list {
             list-style-type: none;
             padding: 0;
@@ -182,12 +193,17 @@
   </ul>
 </nav>
 
-<!-- Header Section -->
-<header>
-    <h1>Welcome to Our Sports Club</h1>
-</header>
+
 
 <main>
+    <!-- Notifications Section -->
+   <section id="notifications-section">
+    <h2 class="notifications-header">Latest Notifications</h2>
+    <ul id="notifications-list">
+        <!-- Notifications will be dynamically inserted here -->
+    </ul>
+</section>
+
     <!-- Season Commencement Dates Table -->
     <div class="table-container">
         <h2>Season Commencement Dates</h2>
@@ -234,15 +250,8 @@
             </tr>
         </table>
     </div>
-
-    <!-- Notifications Section -->
-    <section id="notifications-section">
-        <h2>Latest Notifications</h2>
-        <ul id="notifications-list">
-            <!-- Notifications will be dynamically inserted here -->
-        </ul>
-    </section>
 </main>
+
 
 <footer>
     <p>&copy; 2024 Sports Club. All rights reserved.</p>
@@ -251,13 +260,18 @@
 <script>
     const notifications = [
         {
-            title: "All Senior Cricket has been cancelled for today",
+            title: "All senior cricket has been cancelled for today",
             date: "11 January 2025",
-            description: "Due to weather, all senior cricket games scheduled for today have been cancelled."
+            description: "Due to unforeseen circumstances, all senior cricket games scheduled for today have been cancelled. We apologize for the inconvenience."
         },
-    
-    ];
       
+      *// {title: "Club Training (Seniors)",
+       //     date: "Sundays (ongoing)",
+         //   time: "9:00 AM - 12:00 PM",
+         //   location: "Memorial Oval, Ingleburn",
+         //   description: "Prepare for the season at the club training day. Open to all members, this is a great opportunity to hone your skills and get to know your teammates.",
+         //   note: "- Junior team coaches will arrange training sessions directly with teams"} 
+    ];
 
     function renderNotifications() {
         const notificationsList = document.getElementById('notifications-list');
@@ -282,6 +296,8 @@
         renderNotifications();
     });
 </script>
+
+
 
 </body>
 </html>
