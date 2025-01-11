@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manage Notifications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFE01A;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #2557B6;
+            padding: 10px 20px;
+            color: #fff; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo a {
+            text-decoration: none;
+            color: #ffff00;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 100px; 
+            margin-right: 15px; 
+        }
+
+        .navbar .logo a h2 {
+            color: #ffff00;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 14px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #204998;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-container input, .form-container textarea, .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: #2557B6;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #204998;
+        }
+
+        .notification-item {
+            background-color: #ffefc3;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notification-item h4 {
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .delete-btn {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
+            <h2>Admin Panel</h2>
+        </a>
+    </div>
+    <ul>
+        <li><a href="Notifications.html">View Notifications</a></li>
+        <li><a href="index.html">Home</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Manage Notifications</h2>
+    <div class="form-container">
+        <form id="notification-form">
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="Notification Title" required>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+
+            <label for="description">Description</label>
+            <textarea id="description" rows="5" placeholder="Enter notification details..." required></textarea>
+
+            <button type="submit">Add Notification</button>
+        </form>
+    </div>
+
+    <h2>Existing Notifications</h2>
+    <ul id="notifications-list"></ul>
+</main>
+
+<script>
+    const notifications = [];
+
+    const form = document.getElementById('notification-form');
+    const notificationsList = document.getElementById('notifications-list');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const title = document.getElementById('title').value;
+        const date = document.getElementById('date').value;
+        const description = document.getElementById('description').value;
+
+        const notification = { title, date, description };
+        notifications.push(notification);
+
+        renderNotifications();
+        form.reset();
+    });
+
+    function renderNotifications() {
+        notificationsList.innerHTML = '';
+
+        notifications.forEach((notification, index) => {
+            const notificationItem = document.createElement('li');
+            notificationItem.className = 'notification-item';
+
+            notificationItem.innerHTML = `
+                <div>
+                    <h4>${notification.title}</h4>
+                    <p><strong>Date:</strong> ${notification.date}</p>
+                    <p>${notification.description}</p>
+                </div>
+                <button class="delete-btn" onclick="deleteNotification(${index})">Delete</button>
+            `;
+
+            notificationsList.appendChild(notificationItem);
+        });
+    }
+
+    function deleteNotification(index) {
+        notifications.splice(index, 1);
+        renderNotifications();
+    }
+</script>
+
+</body>
+</html>
