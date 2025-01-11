@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Notifications</title>
+    <title>Admin - Manage Notifications</title>
     <style>
         * {
             margin: 0;
@@ -14,87 +14,48 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .navbar {
-            background-color: #2557B6;
-            padding: 10px 20px;
-            color: #fff; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar .logo a {
-            text-decoration: none;
-            color: #ffff00;
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar ul {
-            list-style: none;
-            display: flex;
-        }
-
-        .navbar ul li {
-            margin-left: 20px;
-        }
-
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        main {
             padding: 20px;
         }
 
-        h2 {
-            font-size: 2em;
-            color: #007bff;
-            margin-bottom: 15px;
+        h1, h2 {
             text-align: center;
+            color: #007bff;
         }
 
         .form-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-        }
-
-        .form-container form {
-            display: flex;
-            flex-direction: column;
+            max-width: 600px;
+            margin: 20px auto;
         }
 
         .form-container label {
+            display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
 
         .form-container input,
         .form-container textarea {
-            margin-bottom: 10px;
+            width: 100%;
             padding: 10px;
+            margin-bottom: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
         }
 
         .form-container button {
-            padding: 10px;
+            display: inline-block;
             background-color: #007bff;
             color: #fff;
             border: none;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -103,161 +64,176 @@
             background-color: #0056b3;
         }
 
-        .table-container {
+        .notifications-list {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .notification-item {
             background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .notification-item h4 {
+            margin-bottom: 5px;
+            color: #007bff;
         }
 
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th {
-            background-color: #007bff;
+        .notification-item button {
+            background-color: #ff4d4d;
             color: #fff;
-        }
-
-        .action-buttons button {
-            padding: 5px 10px;
-            margin-right: 5px;
             border: none;
+            padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
+            margin-right: 5px;
         }
 
-        .edit-btn {
-            background-color: #ffc107;
-            color: #fff;
+        .notification-item button.edit {
+            background-color: #007bff;
         }
 
-        .delete-btn {
-            background-color: #dc3545;
-            color: #fff;
+        .notification-item button:hover {
+            opacity: 0.9;
         }
 
-        footer {
-            background-color: #2557B6;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: auto;
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <h2>Admin Panel</h2>
-    </a>
-  </div>
-  <ul>          
-    <li><a href="Notifications.html">View Notifications</a></li>
-    <li><a href="notif_admin.html">Manage Notifications</a></li>
-  </ul>
-</nav>
-
-<main>
-    <h2>Manage Notifications</h2>
-
+    <h1>Manage Notifications</h1>
     <div class="form-container">
-        <form id="notification-form">
-            <label for="title">Title:</label>
-            <input type="text" id="title" required>
-
-            <label for="date">Date:</label>
-            <input type="date" id="date" required>
-
-            <label for="description">Description:</label>
-            <textarea id="description" rows="4" required></textarea>
-
-            <button type="submit">Add Notification</button>
-        </form>
+        <h2>Add / Edit Notification</h2>
+        <label for="title">Title</label>
+        <input type="text" id="title" placeholder="Notification Title" />
+        <label for="date">Date</label>
+        <input type="date" id="date" />
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Notification Description"></textarea>
+        <button id="add-update-btn">Add Notification</button>
     </div>
 
-    <div class="table-container">
-        <table id="notifications-table">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Date</th>
-                    <th>Description</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Notifications will be dynamically added here -->
-            </tbody>
-        </table>
+    <div class="notifications-list">
+        <h2>Existing Notifications</h2>
+        <ul id="admin-notifications-list">
+            <!-- Notifications dynamically added here -->
+        </ul>
     </div>
-</main>
 
-<footer>
-    <p>&copy; 2025 Admin Panel. All rights reserved.</p>
-</footer>
+    <h2>Live Preview</h2>
+    <iframe src="Notifications.html" id="preview-window"></iframe>
 
-<script>
-    const notifications = [];
+    <script>
+        const notifications = [];
+        let editIndex = -1;
 
-    function renderTable() {
-        const tableBody = document.getElementById('notifications-table').querySelector('tbody');
-        tableBody.innerHTML = "";
+        const titleInput = document.getElementById('title');
+        const dateInput = document.getElementById('date');
+        const descriptionInput = document.getElementById('description');
+        const addUpdateBtn = document.getElementById('add-update-btn');
+        const adminNotificationsList = document.getElementById('admin-notifications-list');
+        const previewWindow = document.getElementById('preview-window');
 
-        notifications.forEach((notification, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${notification.title}</td>
-                <td>${notification.date}</td>
-                <td>${notification.description}</td>
-                <td class="action-buttons">
-                    <button class="edit-btn" onclick="editNotification(${index})">Edit</button>
-                    <button class="delete-btn" onclick="deleteNotification(${index})">Delete</button>
-                </td>
-            `;
-            tableBody.appendChild(row);
-        });
-    }
+        function renderAdminNotifications() {
+            adminNotificationsList.innerHTML = '';
 
-    function addNotification(event) {
-        event.preventDefault();
-        const title = document.getElementById('title').value;
-        const date = document.getElementById('date').value;
-        const description = document.getElementById('description').value;
+            notifications.forEach((notification, index) => {
+                const listItem = document.createElement('li');
+                listItem.className = 'notification-item';
+                listItem.innerHTML = `
+                    <h4>${notification.title}</h4>
+                    <p><strong>Date:</strong> ${notification.date}</p>
+                    <p>${notification.description}</p>
+                    <button class="edit" onclick="editNotification(${index})">Edit</button>
+                    <button onclick="deleteNotification(${index})">Delete</button>
+                `;
+                adminNotificationsList.appendChild(listItem);
+            });
 
-        notifications.push({ title, date, description });
-        renderTable();
+            updatePreview();
+        }
 
-        document.getElementById('notification-form').reset();
-    }
+        function addOrUpdateNotification() {
+            const title = titleInput.value.trim();
+            const date = dateInput.value;
+            const description = descriptionInput.value.trim();
 
-    function editNotification(index) {
-        const notification = notifications[index];
-        document.getElementById('title').value = notification.title;
-        document.getElementById('date').value = notification.date;
-        document.getElementById('description').value = notification.description;
+            if (!title || !date || !description) {
+                alert('All fields are required.');
+                return;
+            }
 
-        notifications.splice(index, 1);
-        renderTable();
-    }
+            const notification = { title, date, description };
 
-    function deleteNotification(index) {
-        notifications.splice(index, 1);
-        renderTable();
-    }
+            if (editIndex === -1) {
+                notifications.push(notification);
+            } else {
+                notifications[editIndex] = notification;
+                editIndex = -1;
+                addUpdateBtn.textContent = 'Add Notification';
+            }
 
-    document.getElementById('notification-form').addEventListener('submit', addNotification);
-</script>
+            clearForm();
+            renderAdminNotifications();
+        }
+
+        function editNotification(index) {
+            const notification = notifications[index];
+            titleInput.value = notification.title;
+            dateInput.value = notification.date;
+            descriptionInput.value = notification.description;
+            editIndex = index;
+            addUpdateBtn.textContent = 'Update Notification';
+        }
+
+        function deleteNotification(index) {
+            notifications.splice(index, 1);
+            renderAdminNotifications();
+        }
+
+        function clearForm() {
+            titleInput.value = '';
+            dateInput.value = '';
+            descriptionInput.value = '';
+        }
+
+        function updatePreview() {
+            const previewContent = notifications.map(notification => `
+                <li class="notification-item">
+                    <h4>${notification.title}</h4>
+                    <p><strong>Date:</strong> ${notification.date}</p>
+                    <p>${notification.description}</p>
+                </li>
+            `).join('');
+            const iframeDoc = previewWindow.contentDocument || previewWindow.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(`
+                <html>
+                <head>
+                    <link rel="stylesheet" href="styles.css">
+                </head>
+                <body>
+                    <ul id="notifications-list">
+                        ${previewContent}
+                    </ul>
+                </body>
+                </html>
+            `);
+            iframeDoc.close();
+        }
+
+        addUpdateBtn.addEventListener('click', addOrUpdateNotification);
+    </script>
 
 </body>
 </html>
