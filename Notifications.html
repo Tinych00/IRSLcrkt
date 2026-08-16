@@ -178,7 +178,7 @@
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
   <div class="logo">
     <a href="index.html">
       <img src="assets/crkt.png" alt="Ingleburn RSL Cricket Club Logo">
@@ -187,8 +187,8 @@
   </div>
   <ul>          
     <li><a href="Registration.html">Registration</a></li>
-    <li><a href="Notifications.html">Notifications</a></li>
-    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank">Socials</a></li>
+    <li><a href="Notifications.html" aria-current="page">Notifications</a></li>
+    <li><a href="https://www.facebook.com/ingleburnrslcricket/" target="_blank" rel="noopener">Socials</a></li>
     <li><a href="Contact.html">Contact</a></li>
     <li><a href="About_Us.html">About Us</a></li>
   </ul>
@@ -220,24 +220,24 @@
                 <td> </td>
             </tr>
             <tr>
-                <td>U/10s & U/11s</td>
+                <td>U/10s &amp; U/11s</td>
                 <td></td>
-                <th>TBD</th>
+                <td>TBD</td>
             </tr>
             <tr>
-                <td>U/12s & U/13s</td>
+                <td>U/12s &amp; U/13s</td>
                 <td></td>
-                <th>TBD</th>
+                <td>TBD</td>
             </tr>
             <tr>
-                <td>U/14s & U/15s</td>
+                <td>U/14s &amp; U/15s</td>
                 <td></td>
-                <th>TBD</th>
+                <td>TBD</td>
             </tr>
             <tr>
                 <td>U/16s</td>
                 <td></td>
-                <th>TBD</th>
+                <td>TBD</td>
             </tr>
             <tr>
                 <td>Seniors</td>
@@ -247,7 +247,7 @@
             <tr>
                 <td>Grades 1-10</td>
                 <td></td>
-                <th>TBD</th>
+                <td>TBD</td>
             </tr>
         </table>
     </div>
@@ -255,24 +255,23 @@
 
 
 <footer>
-    <p>&copy; 2024 Sports Club. All rights reserved.</p>
+    <p>&copy; 2026 Ingleburn RSL Cricket Club. All rights reserved.</p>
 </footer>
 
 <script>
     const notifications = [
-          {
+        {
             title: "Senior + Junior Registrations are now open for 2026/27!!",
             date: "15 August 2026",
-            description: "Teams are filling fast, so don't miss out. Register now to secure your spot in the team. Teams will be selected by Sunday 6th September, but will close as soon as we reach capacity."
+            description: "Teams are filling fast, so don't miss out. Register now to secure your spot in the team. Teams will be selected by Sunday 6th September, but registrations will close as soon as we reach capacity."
         },
         {
-         {
-              title: "Senior Pre-Season Training!",
-              date: "Every Sunday until 20th September",
-              time: "9:00 AM - 12:00 PM (Seniors)",
-              location: "Memorial Oval, Ingleburn",
-              description: "Prepare for the season at the club training day. Open to all members, this is a great opportunity to hone your skills and get to know your teammates."
-            }
+            title: "Senior Pre-Season Training!",
+            date: "Every Sunday until 20th September",
+            time: "9:00 AM - 12:00 PM (Seniors)",
+            location: "Memorial Oval, Ingleburn",
+            description: "Prepare for the season at the club training day. Open to all members, this is a great opportunity to hone your skills and get to know your teammates."
+        }
     ];
 
     function renderNotifications() {
